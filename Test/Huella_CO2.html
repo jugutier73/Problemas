@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Huella de carbono personal</title>
+
+    <script type="text/javascript" src="Huella_CO2.js"></script>
+  </head>
+
+  <body>
+    <h2>KILÓMETROS RECORRIDOS EN</h2>
+    <label>- carro: </label>
+    <input type="number" id="kmCarro" /><br>
+
+    <label>- moto: </label>
+    <input type="number" id="kmMoto" /><br>
+
+    <label>- bicicleta: </label>
+    <input type="number" id="kmBicicleta" /><br>
+
+    <h2>CANTIDAD DE TRAYECTOS EN</h2>
+    <label>- bus: </label>
+    <input type="number" id="trayectosBus" /><br>
+
+    <h2>CANTIDAD COMIDAS CON</h2>
+    <label>- carne roja: </label>
+    <input type="number" id="comidasCarneRoja" /><br>
+
+    <label>- pescado: </label>
+    <input type="number" id="comidasPescado" /><br>
+
+    <label>- vegetarianas: </label>
+    <input type="number" id="comidasVegetarianas" /><br>
+
+    <br><button onclick="main()">Calcular huella de carbono</button><br>
+    
+    <h2>HUELLA DE CARBONO</h2>
+
+    <textarea id="salida" rows="10" cols="50" readonly></textarea>
+  </body>
+
+</html>
