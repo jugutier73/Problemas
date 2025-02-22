@@ -10,5 +10,5 @@ package modulo
 import "fmt"
 
 func MostrarMensaje(mensaje string) {
-	fmt.Println(mensaje)
+	fmt.Print(mensaje)
 }
