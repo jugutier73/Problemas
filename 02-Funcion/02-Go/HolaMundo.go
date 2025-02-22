@@ -14,5 +14,5 @@ func main() {
 }
 
 func mostrarMensaje(mensaje string) {
-	fmt.Println(mensaje)
+	fmt.Print(mensaje)
 }
