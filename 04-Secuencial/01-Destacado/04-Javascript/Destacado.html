@@ -1,0 +1,34 @@
+<!--
+    Página web con una entradas, un botón y un área de texto, 
+    para la aplicación de la empresa de seguridad Aros S.A. 
+    que permita resaltar el nombre del empleado destacado 
+    del mes ofreciendo unas felicitaciones 
+    públicas.
+    Autor: Julián Esteban Gutiérrez Posada
+    Fecha: Febrero 2025
+    Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Saludo</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Destacado.js"></script>
+  </head>
+
+  <body>
+    <h2>EMPLEADO DESTACADO</h2>
+    <label>- Nombre del empleado destacado:  </label>
+    <input type="text" id="nombreEmpleado" /><br>
+
+    <label>- Nombre del mes: </label>
+    <input type="text" id="nombreMes" /><br>
+
+    <br><button onclick="main()">Generar Felicitaciones</button><br>
+    <br><textarea id="salida" rows="10" cols="50" readonly></textarea>
+  </body>
+
+</html>
