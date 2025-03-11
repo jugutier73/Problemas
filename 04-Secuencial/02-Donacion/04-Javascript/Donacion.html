@@ -1,0 +1,33 @@
+<!--
+    Página web con dos entradas, un botón y un área de texto, 
+    para la iniciativa Amigo Social que permita generar
+    el documento de recibido que sirva como soporte contable de
+    la donación.
+    Autor: Julián Esteban Gutiérrez Posada
+    Fecha: Febrero 2025
+    Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Saludo</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Donacion.js"></script>
+  </head>
+
+  <body>
+    <h2>DONACIÓN - CAUSA SOCIAL</h2>
+    <label>- Nombre casa adulto mayor:  </label>
+    <input type="text" id="nombreAdultoMayor" /><br>
+
+    <label>- Cantidad recolectada: </label>
+    <input type="number" id="cantidadRecolectada" /><br>
+
+    <br><button onclick="main()">Generar recibo</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>
