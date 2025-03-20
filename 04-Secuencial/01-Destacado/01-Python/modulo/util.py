@@ -6,4 +6,4 @@
 """
 
 def mostrar_mensaje(mensaje):
-    print(mensaje)
+    print(mensaje, end="")
