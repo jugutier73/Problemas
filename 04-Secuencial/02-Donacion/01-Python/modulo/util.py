@@ -6,7 +6,7 @@
 """
 
 def mostrar_mensaje(mensaje):
-    print(mensaje)
+    print(mensaje, end="")
 
 def ingresar_texto(pregunta):
     return input(pregunta)
