@@ -1,0 +1,34 @@
+<!--
+    Página web con dos entradas, un botón y un área de texto, 
+    para tener un control del consumo de la energía eléctrica 
+    con relación al consumo del mes anterior, para que así el
+    usuario pueda adoptar hábitos de consumo más conscientes 
+    y responsables.
+    Autor: Julián Esteban Gutiérrez Posada
+    Fecha: Febrero 2025
+    Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Relación consumo energía eléctrica</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Electricidad.js"></script>
+  </head>
+
+  <body>
+    <h2>RELACIÓN CONSUMO ENERGÍA ELÉCTRICA</h2>
+    <label>- Consumo mes actual   (kilovatios): </label>
+    <input type="text" id="consumoActual" /><br>
+
+    <label>- Consumo mes anterior (kilovatios): </label>
+    <input type="number" id="consumoAnterior" /><br>
+
+    <br><button onclick="main()">Generar Relación de Consumo</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

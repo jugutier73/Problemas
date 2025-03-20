@@ -1,0 +1,34 @@
+<!--
+    Página web con tres entradas, un botón y un área de texto, 
+    para calcular la cantidad de CO2 emitido por el uso de
+    transporte particular (carro y moto), el empleo del transporte 
+    público (buses)
+    Autor: Julián Esteban Gutiérrez Posada
+    Fecha: Febrero 2025
+    Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Huella de carbono por transporte</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Huella.js"></script>
+  </head>
+
+  <body>
+    <h2>HUELLA DE CARBONO POR TRANSPORTE</h2>
+    <label>- Total de kilómetros en carro: </label>
+    <input type="text" id="kmCarro" /><br>
+    <label>- Total de kilómetros en moto: </label>
+    <input type="text" id="kmMoto" /><br>
+    <label>- Total de kilómetros en buses: </label>
+    <input type="text" id="kmBuses" /><br>
+    
+    <br><button onclick="main()">Generar informe IMC</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>
