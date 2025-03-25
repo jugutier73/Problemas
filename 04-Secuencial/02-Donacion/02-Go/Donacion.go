@@ -10,7 +10,7 @@
 package main
 
 import (
-	"destacado/modulo"
+	"donacion/modulo"
 	"fmt"
 	"strconv"
 )
