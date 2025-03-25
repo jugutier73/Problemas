@@ -12,8 +12,8 @@ from modulo.util import mostrar_mensaje, ingresar_texto
 def main():
     nombre_casa = ingresar_texto("Nombre casa adulto mayor: ")
     cantidad_recolectada = ingresar_texto("Cantidad recolectada: ")
-    recibo = generar_recibo(nombre_casa, cantidad_recolectada)
-    mostrar_mensaje(recibo)
+    reciboDonacion = generar_recibo(nombre_casa, cantidad_recolectada)
+    mostrar_mensaje(reciboDonacion)
 
 def ingresar_entero(pregunta):
     return int(ingresar_texto(pregunta))
