@@ -17,11 +17,7 @@ ingresarTexto pregunta = do
   getLine
 
 ingresarEntero :: String -> IO Int
-ingresarEntero pregunta = do
-  mostrarMensaje pregunta
-  readLn
+ingresarEntero pregunta = read <$> ingresarTexto pregunta 
 
 ingresarReal :: String -> IO Double
-ingresarReal pregunta = do
-  mostrarMensaje pregunta
-  readLn
+ingresarReal pregunta = read <$> ingresarTexto pregunta 
