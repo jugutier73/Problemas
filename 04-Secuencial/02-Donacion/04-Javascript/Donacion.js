@@ -9,12 +9,12 @@
 
 function main() {
   let nombreCasa = ingresarTexto("nombreAdultoMayor");
-  let cantidadRecolectada = ingresarTexto("cantidadRecolectada");
+  let cantidadRecolectada = ingresarEntero("cantidadRecolectada");
   let reciboDonacion = generarRecibo(nombreCasa, cantidadRecolectada);
   mostrarMensaje(reciboDonacion);
 }
 
-function ingresaEntero(componente) {
+function ingresarEntero(componente) {
   return parseInt(ingresarTexto(componente));
 }
 
