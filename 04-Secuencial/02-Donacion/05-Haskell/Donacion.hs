@@ -18,9 +18,7 @@ main = do
   mostrarMensaje reciboDonacion
 
 ingresarEntero :: String -> IO Int
-ingresarEntero pregunta = do
-  mostrarMensaje pregunta
-  readLn
+ingresarEntero pregunta = read <$> ingresarTexto pregunta 
   
 generarRecibo :: String -> Int -> String
 generarRecibo nombreCasa cantidadRecolectada =
