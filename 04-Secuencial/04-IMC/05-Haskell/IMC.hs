@@ -7,7 +7,7 @@
 -}
 
 import Text.Printf (printf)
-import Modulo.Util (mostrarMensaje, ingresarEntero)
+import Modulo.Util (mostrarMensaje, ingresarTexto, ingresarEntero)
 
 main :: IO()
 main = do
@@ -18,9 +18,7 @@ main = do
   mostrarMensaje informeIMC
 
 ingresarReal :: String -> IO Double
-ingresarReal pregunta = do
-  mostrarMensaje pregunta
-  readLn
+ingresarReal pregunta = read <$> ingresarTexto pregunta 
 
 calcularIMC :: Int -> Double -> Double
 calcularIMC peso altura =
