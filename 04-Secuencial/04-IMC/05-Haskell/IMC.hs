@@ -22,7 +22,7 @@ ingresarReal pregunta = read <$> ingresarTexto pregunta
 
 calcularIMC :: Int -> Double -> Double
 calcularIMC peso altura =
-  fromIntegral peso / altura ** 2
+  fromIntegral peso / (altura ** 2)
 
 generarInformeIMC :: Int -> Double -> Double -> String
 generarInformeIMC peso altura imc =
