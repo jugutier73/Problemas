@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[pdfencoding=auto]{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+    \begin{Form}
+    \PushButton[%
+    onclick={
+      ANCHO = 15;
+      BATERIA = 1;
+      TELEFONO = 2;
+      COMPUTADOR = 3;
+      CARGADOR = 4;
+      OTRO_DISPOSITIVO = 5;
+      SI = 4;
+      ETIQUETAS = {
+	      1: "Batería",
+	      2: "Teléfono",
+	      3: "Computador",
+	      4: "Cargador",
+	      5: "Otro"
+      };
+      function main() {
+         let residuos = ingresarColeccion(ingresarResiduo);
+      	let residuosClasificados = ordenarColeccion(residuos, compararCampoTipo, false);
+      	let cantidadBaterias = contarSegunCriterio(residuos, tenerTipo, BATERIA);
+	      let cantidadTelefonos = contarSegunCriterio(residuos, tenerTipo, TELEFONO);
+	      let cantidadComputadores = contarSegunCriterio(residuos, tenerTipo, COMPUTADOR);
+	      let cantidadCargadores = contarSegunCriterio(residuos, tenerTipo, CARGADOR);
+	      let cantidadOtros = contarSegunCriterio(residuos, tenerTipo, OTRO_DISPOSITIVO);
+      	let reporteRecoleccion = generarReporteRecoleccion(
+      		residuosClasificados,
+      		cantidadBaterias,
+      		cantidadTelefonos,
+      		cantidadComputadores,
+      		cantidadCargadores,
+		      cantidadOtros);
+      	mostrarMensaje(reporteRecoleccion);
+      }
+      function mostrarMensaje(mensaje) {
+         this.getField("salida").value = mensaje;
+      }
+      function prompt(mensaje) {
+         return app.response({cQuestion: mensaje});
+      }
+      function confirm(mensaje){
+         return app.alert({cMsg: mensaje, nIcon: 2, nType: 2 }) == SI;
+      }
+      function ingresarColeccion(ingresarElemento) {
+         const coleccion = [];
+         let hayMas = true;
+         while (hayMas) {
+            coleccion.push(ingresarElemento());
+            hayMas = confirm("Hay m\\xe1s datos (s:Ok / n:Cancelar): ");
+         }
+         return coleccion;
+      }
+      function ordenarColeccion(coleccion, comparador, descendente) {
+         return [...coleccion].sort(
+            (donante1, donante2) => descendente ? 
+               comparador(donante2, donante1) :
+               comparador(donante1, donante2)
+         );
+      }
+      function convertirColeccionCadena(titulo, lista, convertirElementoCadena) {
+         let mensaje = `\\n${titulo}\\n`;
+         for (const elemento of lista) {
+            mensaje += "\\t" + convertirElementoCadena(elemento);
+         }
+         return mensaje;
+      }
+      function contarSegunCriterio(coleccion, aplicarCriterio, valorCriterio) {
+         return coleccion.filter((elemento) => aplicarCriterio(elemento, valorCriterio) ).length;
+      }
+      function ingresarResiduo() {
+	      app.alert("Ingrese los datos del residuo electr\\xf3nico:");
+      	let codigo = prompt("Ingrese el c\\xf3digo del residuo: ");
+	      let tipo = Number(prompt("TIPOS DE RESIDUOS\\n" +
+		      "    1: Bater\\xeda\\n" +
+		      "    2: Tel\\xe9fono\\n" +
+		      "    3: Computador\\n" +
+		      "    4: Cargador\\n" +
+		      "    5: Otro dispositivo\\n" +
+		      "Ingrese tipo de residuo      : ")) || 0;
+	      let reparable = confirm("Puede ser reparado (s:Ok / n:Cancelar): ");
+      	return { codigo, tipo, reparable };
+      }
+      function compararCampoTipo(residuo1, residuo2) {
+	      let comparacionTipo = residuo1.tipo - residuo2.tipo;
+      	if (comparacionTipo == 0) {
+      		comparacionTipo = residuo2.reparable - residuo1.reparable;
+	      }
+   	   return comparacionTipo;
+      }
+      function tenerTipo(residuo, tipoInteres) {
+	      return residuo.tipo == tipoInteres;
+      }
+      function generarReporteRecoleccion(residuosClasificados,
+	      cantidadBaterias,
+	      cantidadTelefonos,
+	      cantidadComputadores,
+	      cantidadCargadores,
+	      cantidadOtros) {
+	      listadoResiduosClasificados = convertirColeccionCadena(
+		      "LISTADO DE RESIDUOS CLASIFICADOS",
+		      residuosClasificados,
+		      convertirResiduoCadena);
+      	return `${listadoResiduosClasificados}\\n\\n` +
+      		`Cantidad de Bater\\xedas     : ${cantidadBaterias}\\n` +
+      		`Cantidad de Tel\\xe9fonos    : ${cantidadTelefonos}\\n` +
+      		`Cantidad de Computadores : ${cantidadComputadores}\\n` +
+      		`Cantidad de Cargadores   : ${cantidadCargadores}\\n` +
+      		`Cantidad de Otros        : ${cantidadOtros}\\n`;
+      }
+      function convertirResiduoCadena(residuo) {
+	      etiqueta = ETIQUETAS[residuo.tipo];
+	      reparable = residuo.reparable ? "(REPARABLE)" : "";
+         return `${residuo.codigo.padEnd(ANCHO)} ${etiqueta.padEnd(ANCHO)} ${reparable}\\n`;
+      }
+      main();
+    }]{Generar reporte recolección}
+  \end{Form}
+
+  \vspace{0.2cm} 
+
+  \begin{Form}
+     \TextField[name=salida,width=10cm,height=15cm,multiline=true,readonly=true]{}
+  \end{Form} 
+
+}
+
+\end{document}

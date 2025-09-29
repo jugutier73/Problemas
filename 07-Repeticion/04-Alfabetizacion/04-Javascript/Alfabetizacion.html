@@ -1,0 +1,31 @@
+<!--
+   Página web con un campo de texto, un botón y 
+   un área de texto, para determinar si hay problemas 
+   con el uso de los espacios en un frase que el usuario ingrese
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Septiembre 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe sobre uso de espacios</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Alfabetizacion.js"></script>
+  </head>
+
+  <body>
+    <h2>INFORME USO DE ESPACIOS</h2>
+
+    <label>- Ingrese la frase a analizar:  </label>
+    <input type="text" id="frase" /><br>
+    
+    <br><button onclick="main()">Generar informe uso de espacios</button><br>
+    <br><textarea id="salida" rows="5" cols="60" readonly></textarea>
+  </body>
+
+</html>

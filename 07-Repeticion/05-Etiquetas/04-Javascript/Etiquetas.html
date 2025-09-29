@@ -1,0 +1,37 @@
+<!--
+   Página web con un campo de texto, un botón y 
+   un área de texto, para verificar si una etiqueta 
+   de reciclaje es válida  y reportar los campos con error.
+
+   Formato: T-aaaa-mm
+   - T: tipo de residuo
+     (P: plástico, V: vidrio, M: metal, C: cartón/papel, O: orgánico)
+   - aaaa: año (> 2025)
+   - mm: mes (01-12)
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Septiembre 2025
+   Licencia: GNU GPL v3   
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe validación de etiquetas</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Etiquetas.js"></script>
+  </head>
+
+  <body>
+    <h2>INFORME VALIDACIÓN DE ETIQUETAS</h2>
+
+    <label>- Ingrese la etiqueta a analizar:  </label>
+    <input type="text" id="etiqueta" /><br>
+    
+    <br><button onclick="main()">Validar etiqueta</button><br>
+    <br><textarea id="salida" rows="6" cols="60" readonly></textarea>
+  </body>
+
+</html>

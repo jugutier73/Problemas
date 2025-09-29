@@ -1,0 +1,79 @@
+<!--
+   Programa que registra los residuos recolectados durante una
+   jornada, especificando su código, tipo y condición de
+   reparabilidad. El sistema genera un informe con el
+   listado de los elementos recolectados, ordenados por tipo y
+   reparabilidad, además de presentar un conteo total por cada
+   tipo de residuo.
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Diciembre 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recolección de Residuos Electrónicos</title>
+
+    <link rel="stylesheet" href="RecoleccionForm.css" />
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="RecoleccionForm.js"></script>
+</head>
+
+
+<body>
+    <h2>RECOLECCIÓN DE RESIDUOS ELECTRÓNICOS</h2>
+
+    <div class="row">
+        <label>Código</label>
+        <input id="codigo">
+
+        <label>Tipo</label>
+        <select id="tipo">
+            <option value="1">1: Batería</option>
+            <option value="2">2: Teléfono</option>
+            <option value="3">3: Computador</option>
+            <option value="4">4: Cargador</option>
+            <option value="5">5: Otro dispositivo</option>
+        </select>
+
+        <label>Reparable</label>
+        <input type="checkbox" id="reparable">
+
+        <button id="agregar" 
+            onclick="agregarResiduo(); actualizarTabla();">
+            Agregar
+        </button>
+
+        <button id="generar" 
+            onclick="generarReporte();">
+            Generar reporte
+        </button>
+
+        <button id="limpiar" 
+            onclick="limpiarFormulario(); actualizarTabla();">
+            Limpiar
+        </button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Tipo</th>
+                <th>Observación</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+    </table>
+
+    <h2>Reporte</h2>
+    <br><textarea id="salida" class="salida" rows="13" cols="90" readonly>     
+    </textarea>
+
+</body>
+
+</html>

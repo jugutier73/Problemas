@@ -1,0 +1,30 @@
+<!--
+   Página web con un botón y un campos de texto para registrar y 
+   consultar de    manera ágil todas las donaciones recibidas. Esta 
+   debería ofrecer el total recaudado, listados alfabéticos y 
+   descendentes por valor, identificar a los aportantes que superen un 
+   umbral específico y señalar al mayor donante.
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Diciembre 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Control de donaciones</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Donaciones.js"></script>
+  </head>
+
+  <body>
+    <h2>CONTROL DE DONACIONES</h2>
+       
+    <br><button onclick="main()">Iniciar donaciones</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

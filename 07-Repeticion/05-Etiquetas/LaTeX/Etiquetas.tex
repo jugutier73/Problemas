@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage[pdfencoding=auto]{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+  \begin{Form}
+    \texttt{Ingrese la etiqueta a analizar: }
+    \TextField[name=etiqueta,width=4cm]{}
+    \vspace{0.2cm}
+
+    \TextField[name=salida,width=10cm,height=2.8cm,multiline=true,readonly=true]{}
+    \end{Form}
+    
+    \vspace{0.2cm} 
+     
+    \begin{Form}
+    \PushButton[%
+    onclick={
+            LONGITUD_ETIQUETA = 9;
+            SEPARADOR = '-';
+            POSICION_SEPARADOR1 = 1;
+            POSICION_SEPARADOR2 = 6;
+            POSICION_TIPO = 0;
+            POSICION_ANIO = 2;
+            LONGITUD_ANIO = 4;
+            POSICION_MES = 7;
+            LONGITUD_MES = 2;
+            MINIMO_ANIO = 2026;
+            MINIMO_MES = 1;
+            MAXIMO_MES = 12;
+            TIPOS_VALIDOS = "PVMCO";
+            ETIQUETA_OK = 0;
+            ERROR_LONGITUD = 1;
+            ERROR_FORMATO = 2;
+            ERROR_TIPO = 4;
+            ERROR_ANIO = 8;
+            ERROR_MES = 16;
+            function main() {
+                let etiqueta = ingresarTexto('etiqueta');
+                let codigo = verificarEtiquetaReciclaje(etiqueta);
+                let reporteEtiqueta = generarReporteEtiqueta(etiqueta, codigo);
+                mostrarMensaje(reporteEtiqueta);
+            }
+            function mostrarMensaje(mensaje) {
+                this.getField("salida").value = mensaje;
+            }
+            function ingresarTexto(componente) {
+                let texto = this.getField(componente).value;
+                return texto;
+            }
+            function verificarEtiquetaReciclaje(etiqueta) {
+                let codigo = verificarLongitud(etiqueta);
+                if (codigo != ERROR_LONGITUD) {
+                    codigo  = verificarFormato(etiqueta) |
+                              verificarTipo(etiqueta)    |
+                              verificarAnio(etiqueta)    |
+                              verificarMes(etiqueta);
+                }
+                return codigo;
+            }
+            function verificarLongitud(etiqueta) {
+                let codigoError = ETIQUETA_OK;
+                if (Array.from(etiqueta).length != LONGITUD_ETIQUETA) {
+                    codigoError = ERROR_LONGITUD;
+                }
+                return codigoError;
+            }
+            function verificarFormato(etiqueta) {
+                let codigoError = ETIQUETA_OK;
+                if (etiqueta[POSICION_SEPARADOR1] != SEPARADOR || 
+                    etiqueta[POSICION_SEPARADOR2] != SEPARADOR) {
+                    codigoError = ERROR_FORMATO;
+                }
+                return codigoError;
+            }
+            function verificarTipo(etiqueta) {
+                let codigoError = ETIQUETA_OK;
+                if ( !TIPOS_VALIDOS.includes(etiqueta[POSICION_TIPO]) ) {
+                    codigoError = ERROR_TIPO;
+                }
+                return codigoError;
+            }
+            function verificarAnio(etiqueta) {
+                let codigoError = ETIQUETA_OK;
+                let anioEtiqueta = etiqueta.substring(POSICION_ANIO, POSICION_ANIO + LONGITUD_ANIO);
+                let anio = Number(anioEtiqueta);
+                if (Number.isInteger(anio)) {
+                    if (anio < MINIMO_ANIO) {
+                        codigoError =  ERROR_ANIO;
+                    }
+                } else {
+                    codigoError =  ERROR_ANIO;
+                }
+                return codigoError;
+            }
+            function verificarMes(etiqueta) {
+                let codigoError = ETIQUETA_OK;
+                let mesEtiqueta = etiqueta.substring(POSICION_MES, POSICION_MES + LONGITUD_MES);
+                let mes = Number(mesEtiqueta);
+                if (Number.isInteger(mes)) {	
+                    if (mes < MINIMO_MES || mes > MAXIMO_MES) {
+                        codigoError =  ERROR_MES;
+                    }
+                } else {
+                    codigoError =  ERROR_MES;
+                }
+                return codigoError;
+            }
+            function generarReporteEtiqueta(etiqueta, codigo) {
+                let reporte = `\\nLa  etiqueta \\"${etiqueta}\\" `;
+                if (codigo === ETIQUETA_OK) {
+                    reporte += `es v\\xe1lida.\\n`;
+                } else {
+                    reporte += `es inv\\xe1lida por tener:`;
+                    if (codigo & ERROR_LONGITUD) reporte += `\\n  - Error en la longitud`;
+                    if (codigo & ERROR_FORMATO)  reporte += `\\n  - Error en el formato`;
+                    if (codigo & ERROR_TIPO)     reporte += `\\n  - Error en el tipo`;
+                    if (codigo & ERROR_ANIO)     reporte += `\\n  - Error en el a\\xf1o`;
+                    if (codigo & ERROR_MES)      reporte += `\\n  - Error en el mes`;
+                }
+                return reporte + `\\n`;
+            }
+            main();
+    }]{Generar informe etiquetas}
+  \end{Form}
+}
+
+\end{document}

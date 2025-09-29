@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[pdfencoding=auto]{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+    \begin{Form}
+    \PushButton[%
+    onclick={
+      NIVELES = 3;
+      NIVEL_RIESGO      = 1;
+      NIVEL_URGENCIA    = 2;
+      NIVEL_PRIORITARIO = 3;
+      SI = 4;
+      function main() {
+         let citas = ingresarColeccion(ingresarCita);
+         let citasPorNivel = ordenarColeccion(citas, compararCampoNivel, false);
+         let cantidadRiesgo      = contarSegunCriterio(citas, tenerNivelRiesgo, NIVEL_RIESGO);
+         let cantidadUrgencia    = contarSegunCriterio(citas, tenerNivelRiesgo, NIVEL_URGENCIA);
+         let cantidadPrioritario = contarSegunCriterio(citas, tenerNivelRiesgo, NIVEL_PRIORITARIO);
+         let reporteCitas = generarReporteCitas(citasPorNivel,
+                                                cantidadRiesgo,
+                                                cantidadUrgencia,
+                                                cantidadPrioritario);
+         mostrarMensaje(reporteCitas);
+      }
+      function mostrarMensaje(mensaje) {
+         this.getField("salida").value = mensaje;
+      }
+      function prompt(mensaje) {
+         return app.response({cQuestion: mensaje});
+      }
+      function confirm(mensaje){
+         return app.alert({cMsg: mensaje, nIcon: 2, nType: 2 }) == SI;
+      }
+      function ingresarColeccion(ingresarElemento) {
+         const coleccion = [];
+         let hayMas = true;
+         while (hayMas) {
+            coleccion.push(ingresarElemento());
+            hayMas = confirm("Hay m\\xe1s datos (s:Ok / n:Cancelar): ");
+         }
+         return coleccion;
+      }
+      function ordenarColeccion(coleccion, comparador, descendente) {
+         return [...coleccion].sort(
+            (donante1, donante2) => descendente ? 
+               comparador(donante2, donante1) :
+               comparador(donante1, donante2)
+         );
+      }
+      function convertirColeccionCadena(titulo, lista, convertirElementoCadena) {
+         let mensaje = `\\n${titulo}\\n`;
+         for (const elemento of lista) {
+            mensaje += "\\t" + convertirElementoCadena(elemento);
+         }
+         return mensaje;
+      }
+      function ingresarCita() {
+         app.alert("Ingrese los datos de la cita:");
+         let nombre = prompt("Ingrese el nombre paciente:");
+         let nivel = Number(prompt("NIVEL DE URGENCIA\\n"+
+               "  1: Riesgo\\n"+
+               "  2: Urgencia\\n"+
+               "  3: Prioritario\\n"+
+               "Ingrese tipo de persona: ")) || 0;
+         return { nombre, nivel };
+      }
+      function compararCampoNivel(cita1, cita2) {
+         return cita1.nivel - cita2.nivel;
+      }
+      function contarSegunCriterio(coleccion, aplicarCriterio, valorCriterio) {
+         return coleccion.filter((elemento) => aplicarCriterio(elemento, valorCriterio) ).length;
+      }
+      function tenerNivelRiesgo(cita, nivelRiesgo) {
+         return cita.nivel == nivelRiesgo
+      }
+      function generarReporteCitas(citasPorNivel,
+                                 cantidadRiesgo,
+                                 cantidadUrgencia,
+                                 cantidadPrioritario) {
+         listadoPorNivel = convertirColeccionCadena(
+            "LISTADO POR NIVEL DE URGENCIA", 
+            citasPorNivel, 
+            convertirCitaCadena);
+         return `${listadoPorNivel}\\n\\n` +
+            `Nivel 1 (Riesgo)     : ${cantidadRiesgo}\\n` +
+            `Nivel 2 (Urdencia)   : ${cantidadUrgencia}\\n` + 
+            `Nivel 3 (Prioritario): ${cantidadPrioritario}\\n`;
+      }
+      function convertirCitaCadena(cita) {
+         return `${cita.nivel} : ${cita.nombre}\\n`;
+      }
+      main();
+    }]{Generar citas centro de salud}
+  \end{Form}
+
+  \vspace{0.2cm} 
+
+  \begin{Form}
+     \TextField[name=salida,width=10cm,height=15cm,multiline=true,readonly=true]{}
+  \end{Form} 
+
+}
+
+\end{document}

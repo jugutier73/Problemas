@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[pdfencoding=auto]{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+  \begin{Form}
+    \texttt{Ingrese la frase a analizar:}
+    \TextField[name=frase,width=4cm]{}
+    \vspace{0.2cm}
+
+    \TextField[name=salida,width=10cm,height=2.8cm,multiline=true,readonly=true]{}
+    \end{Form}
+    
+    \vspace{0.2cm} 
+     
+    \begin{Form}
+    \PushButton[%
+    onclick={
+    function main() {
+	    let frase = ingresarTexto('frase');
+    	let fraseCorregida = corregirUsoEspacios(frase);
+	    let reporteAlfabetizacion = generarReporteAlfabetizacion(frase, fraseCorregida);
+	    mostrarMensaje(reporteAlfabetizacion);
+    }
+    function mostrarMensaje(mensaje) {
+		this.getField("salida").value = mensaje;
+	}
+    function ingresarTexto(componente) {
+        let texto = this.getField(componente).value;
+        return texto;
+    }
+    function corregirUsoEspacios(frase) {
+ 	    return frase.trim().split(/\\s+/).join(' ');
+    }
+    function generarReporteAlfabetizacion(frase, fraseCorregida) {
+        let reporteAlfabetizacion = `\\nLa frase \\"${frase}\\" hace un uso `;
+        if (frase == fraseCorregida) {
+            reporteAlfabetizacion += `CORRECTO de espacios.`;
+        } else {
+            reporteAlfabetizacion += `INCORRECTO de espacios,\\n`+
+                `lo correcto es \\"${fraseCorregida}\\"`;
+        }
+        return reporteAlfabetizacion;
+    }
+    main();
+    }]{Generar informe uso de espacios}
+  \end{Form}
+}
+
+\end{document}
