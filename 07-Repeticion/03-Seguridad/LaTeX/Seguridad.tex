@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[pdfencoding=auto]{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+  \begin{Form}
+    \texttt{Ingrese la contraseña a analizar:}
+    \TextField[name=contrasenia,width=4cm]{}
+    \vspace{0.2cm}
+
+    \TextField[name=salida,width=10cm,height=2.8cm,multiline=true,readonly=true]{}
+    \end{Form}
+    
+    \vspace{0.2cm} 
+     
+    \begin{Form}
+    \PushButton[%
+    onclick={
+    function main() {
+        let contrasenia = ingresarTexto('contrasenia'); 
+        let cantidadMayusculas = contarMayusculas(contrasenia);
+        let cantidadMinusculas = contarMinusculas(contrasenia);
+        let cantidadDigitos = contarDigitos(contrasenia);
+        let reporteEstres = generarReporteContrasenia(contrasenia, cantidadMayusculas,cantidadMinusculas, cantidadDigitos);
+        mostrarMensaje(reporteEstres);
+    }
+    function mostrarMensaje(mensaje) {
+		this.getField("salida").value = mensaje;
+	}
+    function ingresarTexto(componente) {
+        let texto = this.getField(componente).value;
+        return texto;
+    }
+    function contarCaracteres(texto, funcion) {
+        let cantidadCaracteres = 0;
+        for (let i = 0 ; i < texto.length ; i++) {
+            if (funcion(texto.charAt(i))) {
+                cantidadCaracteres += 1
+            }
+        }
+        return cantidadCaracteres;
+    }
+    UPPER = /\\p{Lu}/u;
+    LOWER = /\\p{Ll}/u;
+    DIGIT = /\\p{Nd}/u;
+    esMayuscula  = caracter => UPPER.test(caracter);
+    esMinuscula  = caracter => LOWER.test(caracter);
+    esDigito     = caracter => DIGIT.test(caracter);
+    contarMayusculas  = texto => contarCaracteres(texto, esMayuscula);
+    contarMinusculas  = texto => contarCaracteres(texto, esMinuscula);
+    contarDigitos     = texto => contarCaracteres(texto, esDigito);
+    function generarReporteContrasenia(contrasenia,
+        cantidadMayusculas, cantidadMinusculas, cantidadDigitos) {
+        return `\\nEn la constrase\\xf1a \\"${contrasenia}\\"  hay:\\n ` +
+            `${cantidadMayusculas} may\\xfascula(s), `+
+            `${cantidadMinusculas} min\\xfascula(s) y `+
+            `${cantidadDigitos} d\\xedgito(s)`;
+            }
+    main();
+    }]{Generar reporte de estrés}
+  \end{Form}
+}
+
+\end{document}

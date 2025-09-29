@@ -1,0 +1,32 @@
+<!--
+   Página web con dos campos de texto un botón y 
+   un área de texto, para contar cuantas palabras 
+   comienzan con la letra "p" en un mensaje.
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Septiembre 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe de acoso</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Ciberacoso.js"></script>
+  </head>
+
+    <body>
+    <h2>INFORME DE ACOSO</h2>
+    
+    <label>- Ingrese un texto con los mensajes a analizar: </label><br>
+
+    <textarea id="texto" rows="10" cols="60"></textarea><br>
+       
+    <br><button onclick="main()">Contar palabras inician con p</button><br>
+    <br><textarea id="salida" rows="3" cols="60" readonly></textarea>
+  </body>
+
+</html>

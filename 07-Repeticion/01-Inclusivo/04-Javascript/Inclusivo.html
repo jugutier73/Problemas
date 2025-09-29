@@ -1,0 +1,32 @@
+<!--
+   Página web con dos áreas de texto y un botón 
+   para contar cuantas veces se emplean símbolos 
+   "x" o la "@" en un mensaje.
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Septiembre 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Detección de lenguaje inclusivo</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Inclusivo.js"></script>
+  </head>
+
+  <body>
+    <h2>DETECCIÓN DE LENGUAJE INCLUSIVO</h2>
+    
+    <label>- Ingrese un texto con los mensajes: </label><br>
+
+    <textarea id="texto" rows="10" cols="60"></textarea><br>
+       
+    <br><button onclick="main()">Contar empleo de simbolos</button><br>
+    <br><textarea id="salida" rows="3" cols="60" readonly></textarea>
+  </body>
+
+</html>

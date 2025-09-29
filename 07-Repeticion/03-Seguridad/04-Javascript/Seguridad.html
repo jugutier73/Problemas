@@ -1,0 +1,31 @@
+<!--
+   Página web con un campo de texto, un botón y 
+   un área de texto, para evaluar el nivel de estrés 
+   de los estudiantes
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Septiembre 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe sobre la seguridad</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Seguridad.js"></script>
+  </head>
+
+  <body>
+    <h2>INFORME SOBRE LA SEGURIDAD</h2>
+
+    <label>- Ingrese la contraseña a analizar:  </label>
+    <input type="text" id="contrasenia" /><br>
+    
+    <br><button onclick="main()">Generar informe contraseña</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>
