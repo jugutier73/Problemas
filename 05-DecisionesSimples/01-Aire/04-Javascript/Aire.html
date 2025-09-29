@@ -1,0 +1,30 @@
+<!--
+   Página web con una caja de texto, un botón y un área de texto, 
+   para mostrar una alerta cuando el índice de la
+   calidad del aire (medido con algún instrumento) indique que el aire
+   puede resultar perjudicial para la población.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Mayo 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Alerta de la calidad del aire</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Aire.js"></script>
+  </head>
+
+  <body>
+    <h2>ALERTA DE LA CALIDAD DEL AIRE</h2>
+    <label>- Índice calidad del aire: </label>
+    <input type="text" id="indiceCalidadAire" /><br>
+    
+    <br><button onclick="main()">Generar Alerta Calidad del Aire</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

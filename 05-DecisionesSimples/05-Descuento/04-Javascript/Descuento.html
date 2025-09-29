@@ -1,0 +1,34 @@
+<!--
+   Página web con tres checkbox, un botón y un área de texto, 
+   para calcular un descuento a la tarifa del transporte público 
+   según el perfil del usuario, como estudiantes o adultos mayores. 
+   Considerando que los domingos y festivos la tarifa es mayor.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Mayo 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Descuento a la tarifa del transporte público</title>
+
+  <script type="text/javascript" src="modulo/util.js"></script>
+  <script type="text/javascript" src="Descuento.js"></script>
+</head>
+
+<body>
+  <h2>DESCUENTO A LA TARIFA DEL TRANSPORTE PÚBLICO</h2>
+  <label>- Es domingo o festivo </label>
+  <input type="checkbox" id="esDomingoFestivo" /><br>
+  <label>- Es estudiante </label>
+  <input type="checkbox" id="esEstudiante" /><br>
+  <label>- Es adulto mayor </label>
+  <input type="checkbox" id="esAdultoMayor" /><br>
+
+  <br><button onclick="main()">Generar Recibo Tarifa</button><br>
+  <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+</body>
+
+</html>

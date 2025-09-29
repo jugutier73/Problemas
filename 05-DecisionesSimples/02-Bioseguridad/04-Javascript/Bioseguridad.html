@@ -1,0 +1,33 @@
+<!--
+   Página web con tres checkbox, un botón y un área de texto, 
+   para programa para la verificación de medidas
+   de bioseguridad para el ingreso a un evento público.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Mayo 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Verificación de medidas de bioseguridad</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Bioseguridad.js"></script>
+  </head>
+
+  <body>
+    <h2>VERIFICACIÓN DE MEDIDAS DE BIOSEGURIDAD</h2>
+    <label>- Tiene vacunas </label>
+    <input type="checkbox" id="tieneVacunas" /><br>
+    <label>- Pruebas negativas </label>
+    <input type="checkbox" id="restadosNegativos" /><br>
+    <label>- Tiene síntomas </label>
+    <input type="checkbox" id="tieneSintomas" /><br>
+    
+    <br><button onclick="main()">Generar Reporte Ingreso</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+  \begin{Form}
+    \texttt{Edad del donante:  \TextField[name=edadDonante,width=4cm]{}}
+    
+    \vspace{0.2cm}
+
+    \texttt{\CheckBox[name=autorizacionEdad]{Tiene autorización por edad (s/n): }}
+    
+    \vspace{0.2cm}
+
+    \texttt{Peso del donante:  \TextField[name=pesoDonante,width=4cm]{}}
+    
+    \vspace{0.2cm}
+
+    \texttt{\CheckBox[name=suficienteMadurez]{Suficiente madurez fisiológica (s/n): }}
+    
+    \vspace{0.2cm}
+  
+    \TextField[name=salida,width=10cm,height=2.8cm,multiline=true,readonly=true]{}
+    \end{Form}
+    
+    \vspace{0.2cm}
+    
+    \begin{Form}
+    \PushButton[onclick={
+          EDAD_MINIMA = 18;
+          EDAD_MAXIMA = 65;
+          EDAD_MINIMA_AUTORIZACION = 16;
+          EDAD_MAXIMA_AUTORIZACION = 18;
+          PESO_MINIMO = 50.0;
+          function main() {
+             let edadDonante = ingresarEntero('edadDonante');
+             let autorizacionEdad = ingresarLogico('autorizacionEdad');
+             let pesoDonante = ingresarReal('pesoDonante');
+             let suficienteMadurez = ingresarLogico('suficienteMadurez');
+             let reporteLegibilidad = generarReporteEligibilidad(edadDonante, autorizacionEdad, pesoDonante, suficienteMadurez);  
+             mostrarMensaje(reporteLegibilidad);
+          }
+          function mostrarMensaje(mensaje) {
+            this.getField("salida").value = mensaje;
+          }
+          function ingresarLogico(componente) {
+            return this.getField(componente).isBoxChecked(0);
+          }
+          function mostrarError(mensaje) {
+          app.alert(mensaje);
+          }
+          function ingresarTexto(componente) {
+            return this.getField(componente).value;
+          }
+          function ingresarEntero(componente) {          
+            let entero = parseInt(ingresarTexto(componente));
+            if (isNaN(entero)) {
+              mostrarError(`El valor ingresado es inv\\xe1lido, se asume 0`);
+              entero = 0;
+            }
+            return entero;
+          }
+          function ingresarReal(componente) {          
+            let real = parseFloat(ingresarTexto(componente));
+            if (isNaN(real)) {
+              mostrarError(`El valor ingresado es inv\\xe1lido, se asume 0.0`);
+              real = 0.0;
+            }
+            return real;
+          }
+          function generarReporteEligibilidad(edadDonante, autorizacionEdad, pesoDonante, suficienteMadurez)  {
+            let mensaje = `\\nEl donante no cumple las condiciones para donar`;          
+            if ((edadDonante >= EDAD_MINIMA &&  edadDonante <= EDAD_MAXIMA ||
+                edadDonante >= EDAD_MINIMA_AUTORIZACION &&  edadDonante <= EDAD_MAXIMA_AUTORIZACION && 
+                autorizacionEdad) && pesoDonante > PESO_MINIMO && suficienteMadurez){
+              mensaje = `\\nEl donante es elegible para donar`;          
+             }
+            return mensaje;
+          }     
+        main();
+    }]{\texttt{\textbf{Generar reporte de donación}}}
+    \end{Form}
+} 
+
+\end{document}

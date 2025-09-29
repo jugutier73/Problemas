@@ -1,0 +1,34 @@
+<!--
+   Página web con un campo de texto, dos checkbox, un botón y un área de
+   texto, para establecer la prioridad de atención
+   en los centros de salud para identificar a los pacientes con
+   mayor riesgo o vulnerabilidad
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Mayo 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Reporte de tipo de atención médica</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Atencion.js"></script>
+  </head>
+
+  <body>
+    <h2>REPORTE DE TIPO DE ATENCIÓN MÉDICA</h2>
+    <label>- Edad del paciente:</label>
+    <input type="text" id="edadPaciente" /><br>
+    <label>- Enfermedad crónica </label>
+    <input type="checkbox" id="enfermedadCronica" /><br>
+    <label>- Estado de inmunosupresión </label>
+    <input type="checkbox" id="estadoInmunosupresion" /><br>
+    
+    <br><button onclick="main()">Generar tipo de atención médica</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

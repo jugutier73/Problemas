@@ -1,0 +1,35 @@
+<!--
+   Página web con dos campos de texto, dos checkbox, un botón y un área de
+   texto, para verificar la elegibilidad de los donantes 
+   con base en la edad, el peso y la madurez fisiológica
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Mayo 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Reporte de elegibilidad para donar sangre</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Donar.js"></script>
+  </head>
+
+  <body>
+    <h2>REPORTE DE ELIGIBILIDAD PARA DONAR SANGRE</h2>
+    <label>- Edad del donante: </label>
+    <input type="text" id="edadDonante" /><br>
+    <label>- Tiene autorización edad (s/n): </label>
+    <input type="checkbox" id="autorizacionEdad" /><br>
+    <label>- Peso del donante: </label>
+    <input type="text" id="pesoDonante" /><br>
+    <label>- Suficiente madurez fisiológica(s/n):  </label>
+    <input type="checkbox" id="suficienteMadurez" /><br>
+    
+    <br><button onclick="main()">Generar reporte elegibilidad</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

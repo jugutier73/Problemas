@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+  \begin{Form}
+    \texttt{\CheckBox[name=tieneVacunas]{Tiene vacunas}}
+  
+    \texttt{\CheckBox[name=restadosNegativos]{Tiene resultados negativos en pruebas}}
+  
+    \texttt{\CheckBox[name=tieneSintomas]{Tiene síntomas}}
+    
+    \vspace{0.2cm}
+  
+    \TextField[name=salida,width=10cm,height=2.8cm,multiline=true,readonly=true]{}
+    \end{Form}
+    
+    \vspace{0.2cm}
+    
+    \begin{Form}
+    \PushButton[onclick={ 
+        function main() {
+             let tieneVacunas = ingresarLogico('tieneVacunas');
+             let restadosNegativos = ingresarLogico('restadosNegativos');
+             let tieneSintomas = ingresarLogico('tieneSintomas');
+             let reporteIngreso = generarReporteIngreso(tieneVacunas, restadosNegativos, tieneSintomas);  
+             mostrarMensaje(reporteIngreso);
+          }
+          function mostrarMensaje(mensaje) {
+            this.getField("salida").value = mensaje;
+          }
+          function ingresarLogico(componente) {
+            return this.getField(componente).isBoxChecked(0);
+          }
+          function generarReporteIngreso(tieneVacunas, restadosNegativos, tieneSintomas) {
+            let mensaje = `\\nLa persona no puede ingresar al evento`;          
+            if (tieneVacunas && restadosNegativos && !tieneSintomas){
+              mensaje = `\\nLa persona puede ingresar al evento`;          
+             }
+            return mensaje;
+          }     
+        main();
+    }]{\texttt{\textbf{Generar Reporte Ingreso}}}
+    \end{Form}
+} 
+
+\end{document}
