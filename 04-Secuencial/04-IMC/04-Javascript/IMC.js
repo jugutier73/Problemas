@@ -7,14 +7,16 @@
 */
 
 function main() {
-  let peso = ingresaEntero('peso');
-  let altura = ingresaReal('altura');
+  let peso = ingresarEntero('peso');
+  let altura = ingresarReal('altura');
+  
   let imc = calcularIMC(peso, altura);
 	let informeIMC = generarInformeIMC(peso, altura, imc);
+  
 	mostrarMensaje(informeIMC);
 }
 
-function ingresaReal(componente) {
+function ingresarReal(componente) {
   return parseFloat(ingresarTexto(componente));
 }
 
@@ -24,5 +26,5 @@ function calcularIMC(peso, altura) {
 
 function generarInformeIMC(peso, altura, imc) {
   return `\nCon su peso de ${peso} kg y su altura de ${altura.toFixed(1)} metros` +
-         `\nsu \xEDndice de masa corporal (IMC) es de ${imc.toFixed(1)}`;
+         `\nsu \xEDndice de masa corporal (IMC) es de ${imc.toFixed(1)}\n`;
 }

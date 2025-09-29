@@ -3,7 +3,7 @@
    el documento de recibido que sirva como soporte contable de
    la donación.
    Autor: Julián Esteban Gutiérrez Posada
-   Fecha: Febrero 2025
+   Fecha: Marzo 2025
    Licencia: GNU GPL v3
 */
 
@@ -18,7 +18,9 @@ import (
 func main() {
 	nombreCasa := modulo.IngresarTexto("Nombre casa adulto mayor: ")
 	cantidadRecolectada := ingresarEntero("Cantidad recolectada: ")
+
 	reciboDonacion := generarRecibo(nombreCasa, cantidadRecolectada)
+
 	modulo.MostrarMensaje(reciboDonacion)
 }
 
@@ -34,5 +36,5 @@ func generarRecibo(nombreCasa string,
 			"\nuna donación de $%d pesos colombianos"+
 			"\na la casa del adulto mayor %s.", cantidadRecolectada, nombreCasa+
 			"\n\n_______________________"+
-			"\nFirma representante legal")
+			"\nFirma representante legal\n")
 }

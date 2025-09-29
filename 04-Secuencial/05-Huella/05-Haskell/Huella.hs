@@ -20,8 +20,10 @@ main = do
   kmCarro <- ingresarReal "Total de kilómetros en carro: "
   kmMoto <- ingresarReal "Total de kilómetros en moto : "
   kmBuses <- ingresarReal "Total de kilómetros en buses: "
+
   let huella = calcularHuellaCarbono kmCarro kmMoto kmBuses
   let informeHuella = generarHuella kmCarro kmMoto kmBuses huella
+  
   mostrarMensaje informeHuella
 
 calcularHuellaCarbono :: Double -> Double -> Double -> Double
@@ -34,7 +36,7 @@ generarHuella kmCarro kmMoto kmBuses huella =
     ("\nCon %.1f, %.1f, %.1f km de recorrido" ++
     "\nen carro, moto y bus representante,"++
     "\nsu huella de carbono por el uso de"++
-    "\ntransporte es de %.1f kg de CO2."
+    "\ntransporte es de %.1f kg de CO2.\n"
     )
     kmCarro
     kmMoto

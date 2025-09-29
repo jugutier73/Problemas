@@ -3,14 +3,16 @@
    el documento de recibido que sirva como soporte contable de
    la donación.
    Autor: Julián Esteban Gutiérrez Posada
-   Fecha: Febrero 2025
+   Fecha: Marzo 2025
    Licencia: GNU GPL v3
 */
 
 function main() {
   let nombreCasa = ingresarTexto("nombreAdultoMayor");
   let cantidadRecolectada = ingresarEntero("cantidadRecolectada");
+
   let reciboDonacion = generarRecibo(nombreCasa, cantidadRecolectada);
+  
   mostrarMensaje(reciboDonacion);
 }
 
@@ -23,5 +25,5 @@ function generarRecibo(nombreCasa, cantidadRecolectada) {
          `\nuna donación de $${cantidadRecolectada} pesos colombianos` +
          `\na la casa del adulto mayor ${nombreCasa}.` +
          `\n\n_______________________`+
-			   `\nFirma representante legal`
+			   `\nFirma representante legal\n`
 }

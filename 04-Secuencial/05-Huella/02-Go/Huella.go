@@ -24,8 +24,10 @@ func main() {
 	kmCarro := modulo.IngresarReal("Total de kilómetros en carro: ")
 	kmMoto := modulo.IngresarReal("Total de kilómetros en moto : ")
 	kmBuses := modulo.IngresarReal("Total de kilómetros en buses: ")
+
 	huella := calcularHuellaCarbono(kmCarro, kmMoto, kmBuses)
 	informeHuella := generarHuella(kmCarro, kmMoto, kmBuses, huella)
+
 	modulo.MostrarMensaje(informeHuella)
 }
 
@@ -38,6 +40,6 @@ func generarHuella(kmCarro float64, kmMoto float64, kmBuses float64, huella floa
 		"\nCon %.1f, %.1f, %.1f km de recorrido"+
 			"\nen carro, moto y bus representante,"+
 			"\nsu huella de carbono por el uso de"+
-			"\ntransporte es de %.1f kg de CO2.",
+			"\ntransporte es de %.1f kg de CO2.\n",
 		kmCarro, kmMoto, kmBuses, huella)
 }

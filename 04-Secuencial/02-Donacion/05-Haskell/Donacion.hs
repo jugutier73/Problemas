@@ -3,7 +3,7 @@
    el documento de recibido que sirva como soporte contable de
    la donación.
    Autor: Julián Esteban Gutiérrez Posada
-   Fecha: Febrero 2025
+   Fecha: Marzo 2025
    Licencia: GNU GPL v3
 -}
 
@@ -14,11 +14,13 @@ main :: IO()
 main = do
   nombreCasa <- ingresarTexto "Nombre casa adulto mayor: "
   cantidadRecolectada <- ingresarEntero "Cantidad recolectada: "
-  let reciboDonacion = generarRecibo nombreCasa cantidadRecolectada
-  mostrarMensaje reciboDonacion
 
+  let reciboDonacion = generarRecibo nombreCasa cantidadRecolectada
+  
+  mostrarMensaje reciboDonacion
+  
 ingresarEntero :: String -> IO Int
-ingresarEntero pregunta = read <$> ingresarTexto pregunta 
+ingresarEntero pregunta = read <$> ingresarTexto pregunta     
   
 generarRecibo :: String -> Int -> String
 generarRecibo nombreCasa cantidadRecolectada =
@@ -27,6 +29,6 @@ generarRecibo nombreCasa cantidadRecolectada =
     "\nuna donación de $%d pesos colombianos" ++
     "\na la casa del adulto mayor %s." ++
     "\n\n_______________________" ++
-		"\nFirma representante legal")
+    "\nFirma representante legal\n")
     cantidadRecolectada
     nombreCasa

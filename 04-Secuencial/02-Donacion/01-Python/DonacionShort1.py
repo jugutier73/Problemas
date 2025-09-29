@@ -1,0 +1,1 @@
+print(f"\nLa iniciativa Amigo Social tiene el gusto de entregar \nuna donación de ${int(input("Cantidad recolectada: "))} pesos colombianos \na la casa del adulto mayor {input("Nombre casa adulto mayor: ")}.\n\n_______________________\nFirma representante legal\n")

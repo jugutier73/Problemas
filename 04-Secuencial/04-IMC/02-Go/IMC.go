@@ -18,8 +18,10 @@ import (
 func main() {
 	peso := modulo.IngresarEntero("Peso  (kg): ")
 	altura := ingresarReal("Altura (m): ")
+
 	imc := calcularIMC(peso, altura)
 	informeIMC := generarInformeIMC(peso, altura, imc)
+
 	modulo.MostrarMensaje(informeIMC)
 }
 
@@ -35,5 +37,5 @@ func calcularIMC(peso int, altura float64) float64 {
 func generarInformeIMC(peso int, altura float64, imc float64) string {
 	return fmt.Sprintf(
 		"\nCon su peso de %d kg y su altura de %.1f metros"+
-			"\nsu índice de masa corporal (IMC) es de %.1f", peso, altura, imc)
+			"\nsu índice de masa corporal (IMC) es de %.1f\n", peso, altura, imc)
 }

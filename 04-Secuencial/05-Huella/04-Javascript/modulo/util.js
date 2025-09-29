@@ -1,22 +1,71 @@
 /*
    Módulo de utilidades (funciones de apoyo)
    Autor: Julián Esteban Gutiérrez Posada
-   Fecha: Febrero 2025
+   Fecha: Marzo 2025
    Licencia: GNU GPL v3
 */
 
+/**
+ * Muestra un mensaje (cadena) en la salida estandar.
+ * 
+ * @param {string} mensaje - Mensaje que se desea mostrar.
+ */
 function mostrarMensaje(mensaje) {
   document.getElementById("salida").value = mensaje;
 }
 
+
+/**
+ * Muestra un mensaje (cadena) en el error estandar.
+ * 
+ * @param {string} mensaje Mensaje que se desea mostrar como error.
+ */
+function mostrarError(mensaje) {
+  alert(mensaje);
+}
+
+
+/**
+ * Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+ * 
+ * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @return {string} Texto ingresado por el usuario
+ */
 function ingresarTexto(componente) {
   return document.getElementById(componente).value;
 }
 
-function ingresaEntero(componente) {
-  return parseInt(ingresarTexto(componente));
+/**
+ * Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+ * 
+ * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @return {int} Valor ingresado por el usuario o cero si es un valor inválido.
+ */
+function ingresarEntero(componente) {
+  let entero = Number(ingresarTexto(componente));
+
+  if (!Number.isInteger(entero)) {
+    mostrarError("El valor ingresado es inválido, se asume 0");
+    entero = 0;
+  }
+
+  return entero;
 }
 
-function ingresaReal(componente) {
-  return parseFloat(ingresarTexto(componente));
+
+/**
+ * Devuelve el real ingresado por el usuario como respuesta a una pregunta.
+ * 
+ * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @return {float} Valor ingresado por el usuario o cero si es un valor inválido.
+ */
+function ingresarReal(componente) {
+  let real = Number(ingresarTexto(componente));
+
+  if (isNaN(real)) {
+    mostrarError("El valor ingresado es inválido, se asume 0.0");
+    real = 0.0;
+  }
+  
+  return real;
 }

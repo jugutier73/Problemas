@@ -15,8 +15,10 @@ main :: IO()
 main = do
   consumoActual <- ingresarEntero "Consumo mes actual   (kilovatios): "
   consumoAnterior <- ingresarEntero "Consumo mes anterior (kilovatios): "
+
   let relacionConsumo = calcularRelacionConsumo consumoActual consumoAnterior
   let reporteRelacion = generarReporeRelacion consumoActual consumoAnterior relacionConsumo
+  
   mostrarMensaje reporteRelacion
 
 
@@ -30,7 +32,7 @@ generarReporeRelacion consumoActual consumoAnterior relacionConsumo =
   printf
     ("\nEl consumo actual de %d kilovatios representa" ++
     "\nun %.1f%% con relación al consumo del mes" ++
-    "\nanterior de %d kilovatios.")
+    "\nanterior de %d kilovatios.\n")
     consumoActual
     relacionConsumo
     consumoAnterior

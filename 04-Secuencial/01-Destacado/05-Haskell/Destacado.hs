@@ -3,7 +3,7 @@
    que permita resaltar el nombre del empleado destacado
    del mes ofreciendo unas felicitaciones públicas.
    Autor: Julián Esteban Gutiérrez Posada
-   Fecha: Febrero 2025
+   Fecha: Marzo 2025
    Licencia: GNU GPL v3
 -}
 
@@ -14,7 +14,9 @@ main :: IO()
 main = do
   nombreEmpleado <- ingresarTexto "Nombre del empleado destacado: "
   nombreMes <- ingresarTexto "Nombre del mes: "
+
   let felicitaciones = generarFelicitaciones nombreEmpleado nombreMes
+  
   mostrarMensaje felicitaciones
 
 ingresarTexto :: String -> IO String
@@ -28,6 +30,6 @@ generarFelicitaciones nombreEmpleado nombreMes =
     ("\nLa empresa de seguridad Aros S.A. quiere felicitar" ++
     "\npúblicamente a %s como nuestro" ++
     "\nempleado destacado del mes de %s," ++
-    "\nmuchas gracias por su excelencia.")
+    "\nmuchas gracias por su excelencia.\n")
     nombreEmpleado
     nombreMes

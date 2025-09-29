@@ -9,22 +9,24 @@
 */
 
 function main() {
-  let consumoActual = ingresaEntero('consumoActual');
-  let consumoAnterior = ingresaEntero('consumoAnterior');
+  let consumoActual = ingresarEntero('consumoActual');
+  let consumoAnterior = ingresarEntero('consumoAnterior');
+
   let relacionConsumo = calcularRelacionConsumo(
     consumoActual, consumoAnterior);
   let reporteRelacion = generarReporteRelacion(
     consumoActual, consumoAnterior, relacionConsumo);
+    
   mostrarMensaje(reporteRelacion);
 }
 
 function calcularRelacionConsumo(consumoActual, consumoAnterior) {
-  return consumoActual/consumoAnterior*100.0;
+  return consumoActual / consumoAnterior * 100.0;
 }
 
 function generarReporteRelacion(
   consumoActual, consumoAnterior, relacionConsumo) {
   return `\nEl consumo actual de ${consumoActual} kilovatios representa` +
          `\nun ${relacionConsumo.toFixed(1)}% con relación al consumo ` +
-         `del mes\nanterior de ${consumoAnterior} kilovatios.`;
+         `del mes\nanterior de ${consumoAnterior} kilovatios.\n`;
 }
