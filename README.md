@@ -1,17 +1,14 @@
 # Presentación
 
-Bienvenido al material **"Resolución de problemas mediante el pensamiento computacional"**. Este material combina el *aprendizaje basado en problemas sociales* (ABPS)  con los *pasos para la resolución de problemas* definidos por George Pólya y los elementos del *pensamiento computacional* de Jeannette M. Wings  para resolver situaciones problémica de la vida real. 
+Bienvenido al material “*Resolución de problemas mediante el pensamiento computacional*”. Este material combina el *aprendizaje basado en problemas sociales* (ABPS) con los pasos para la resolución de problemas definidos por **George Pólya** y los elementos del *pensamiento computacional* de **Jeannette M. Wing** para resolver situaciones problémicas de la vida real. Aunque en este material se emplea la programación como herramienta para materializar la solución, su propósito principal no es enseñar un lenguaje específico, sino fortalecer la capacidad de análisis y resolución de problemas en contextos sociales.
 
-Inspirando en la piedra de Rosetta, se mostrará  cómo una misma situación problema puede ser analizada y resuelta en diferentes lenguajes de programación, incluyendo: **Python**, **Go**, **JShell** del lenguaje de programación **Java**, **JavaScript** con **HTML** y **Haskell**. Así, se construirá una base que prioriza el análisis y el diseño, demostrando que las ideas allí desarrolladas, trascienden al lenguajes de programación.
+Este material está enfocado en la resolución de problemas, desde el planteamiento de la situación social, hasta la codificación de un programa que resuelve o aporta en la solución. Inspirado en la piedra de Rosetta, se mostrará cómo una misma situación problema puede ser analizada y resuelta en diferentes lenguajes de programación, incluyendo: **Python**, **Go**, **Java**, **JavaScript** con **HTML** y **Haskell**. Así, se construirá una base que prioriza el análisis y el diseño, demostrando que las ideas allí desarrolladas trascienden al lenguaje de programación.
 
-A lo largo de este material, se resuelven problemas tomados de situaciones "reales", desarrollando sus soluciones mediante los elementos del pensamiento computacional: *abstracción*, *descomposición*, *reconocimiento de patrones* y *codificación*. Este enfoque no solo permitirá adquirir habilidades técnicas, sino también fortalecerá la capacidad para pensar críticamente y colaborar en la resolución de retos complejos.
+A lo largo de este material, se resuelven problemas tomados de situaciones “reales”, desarrollando sus soluciones mediante los elementos del pensamiento computacional: abstracción, descomposición, reconocimiento de patrones y codificación. Este enfoque no solo permitirá adquirir habilidades técnicas, sino también fortalecerá la capacidad para pensar críticamente y colaborar en la resolución de retos complejos.
 
-Además, se explorará la flexibilidad y potencia de los lenguajes de programación seleccionados. Desde Python, conocido por su simplicidad y versatilidad, hasta Haskell, que ofrece un paradigma funcional desafiante y estimulante, cada lenguaje brindará una perspectiva única sobre la programación. Con este enfoque, se espera prepararlo para adaptarse a diferentes entornos tecnológicos y profesionales, convirtiéndolo en un programador analítico y multidisciplinario.
+Además, se explorará la flexibilidad y potencia de los lenguajes de programación seleccionados. Desde **Python**, conocido por su simplicidad y versatilidad, hasta **Haskell**, que ofrece un paradigma funcional desafiante. 
 
-En resumen, este material servirá como guía paso a paso en la iniciación al mundo de la programación, proporcionando herramientas necesarias para convertirlo en un solucionador de situaciones problema competente y creativo.
-
-¡Preparase para descubrir el fascinante mundo de la lógica y la programación!
-
+En resumen, se espera que el material sirva como guía en la iniciación al mundo de la programación, proporcionando herramientas necesarias para convertirse en un solucionador de situaciones problema competente y creativo. 
 
 Julián Esteban Gutiérrez Posada, PhD.
 jugutier@uniquindio.edu.co
