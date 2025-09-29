@@ -1,8 +1,8 @@
 /*
 	Programa que muestra el mensaje "Bienvenidos a la programación"
 	Autor: Julián Esteban Gutiérrez Posada
-	Fecha: Febrero 2025
-	Licencia: GNU GLP v3
+	Fecha: Enero 2025
+	Licencia: GNU GPL v3
 */
 
 package main
@@ -10,5 +10,5 @@ package main
 import "holamundo/modulo"
 
 func main() {
-	modulo.MostrarMensaje("Bienvenidos a la programación")
+	modulo.MostrarMensaje("Bienvenidos a la programación\n")
 }

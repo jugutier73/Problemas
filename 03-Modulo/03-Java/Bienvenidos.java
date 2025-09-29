@@ -1,13 +1,11 @@
-"""
+/*
     Programa que muestra el mensaje "Bienvenidos a la programación"
     Autor: Julián Esteban Gutiérrez Posada
     Fecha: Enero 2025
     Licencia: GNU GPL v3
-"""
+*/
+import modulo.Util;
 
-from modulo.util import mostrar_mensaje
-
-def main():
-    mostrar_mensaje("Bienvenidos a la programación\n")
-
-main()
+void main() {
+    Util.mostrarMensaje("Bienvenidos a la programación\n");
+}
