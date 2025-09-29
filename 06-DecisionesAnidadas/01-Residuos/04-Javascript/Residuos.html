@@ -1,0 +1,41 @@
+<!--
+   Página web con un combo box, un checkbox, un botón y un área de
+   texto, para a clasificación de residuos según su
+   material. Residuos aprovechable (limpios y secos), usar bolsa
+   blanca; residuos orgánicos, usar bolsa verde; lo anterior si
+   existe ruta de recolección selectiva; en otro caso, usar bolsa
+   de color negro.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Julio 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Clasificación de residuos</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Residuos.js"></script>
+  </head>
+
+  <body>
+    <h2>CLASIFICIACIÓN DE RESIDUOS</h2>
+    
+    <label>- Cuál es el tipo de residuo: </label>
+
+    <select id="tipoResiduo">
+      <option selected>aprovechable (limpia y seca)</option>
+      <option >orgánico</option>
+      <option >otro</option>
+    </select><br>
+
+    <label>- Hay ruta de recolección selectiva (s/n): </label>
+    <input type="checkbox" id="hayRecoleccionSelectiva" /><br>
+        
+    <br><button onclick="main()">Clasificar residuo</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

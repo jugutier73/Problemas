@@ -1,0 +1,38 @@
+<!--
+   Página web con un combo box, dos checkbox, un botón y un área de
+   texto, para recomendar un medio de transporte según el tipo de 
+   distancia a la universidad, si está lloviendo, y si hay o no 
+   transporte público.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Julio 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Medio de transporte recomendado</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Movilidad.js"></script>
+  </head>
+
+  <body>
+    <h2>MEDIO DE TRANSPORTE RECOMENDADO</h2>
+    <label>- Vive: </label>
+    <select id="tipoDistancia">
+      <option selected>cerquita</option>
+      <option >cerca</option>
+      <option >lejos</option>
+    </select><br>
+    <label>- Está lloviendo (s/n): </label>
+    <input type="checkbox" id="estaLloviendo" /><br>
+    <label>- Hay transporte público (s/n): </label>
+    <input type="checkbox" id="hayTransporte" /><br>
+    
+    <br><button onclick="main()">Recomendar medio de transporte</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

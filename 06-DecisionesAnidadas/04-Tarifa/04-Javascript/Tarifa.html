@@ -1,0 +1,45 @@
+<!--
+   Página web con dos campos de texto, un checkbox, un combobox,
+   un botón y un área de texto, para calcular, de forma clara y 
+   transparente, el valor de un trayecto en taxi considerando 
+   variables como el horario diurno/nocturno, los recargos de 
+   domingos y festivos, y el destino (ya sea dentro del perímetro 
+   urbano o fuera de él) para determinar si la tarifa cobrada 
+   es justa o no.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Julio 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe de cobro de trayecto en taxi</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Tarifa.js"></script>
+  </head>
+
+  <body>
+    <h2>INFORME DE COBRO DE TRAYECTO EN TAXI</h2>
+    <label>- Valor cobrado: </label>
+    <input type="text" id="valorCobrado" /><br>
+    <label>- Valor del taxímetro: </label>
+    <input type="text" id="valorTaximetro" /><br>
+    <label>- Es domingo, festivo o nocturno (s/n): </label>
+    <input type="checkbox" id="esEspecial" /><br>
+    <label>- Cuál es su destino: </label>
+    <select id="destinoTrayecto">
+      <option selected>urbano</option>
+      <option >lugar periférico</option>
+      <option >extra urbano</option>
+      <option >vía al aeropuerto</option>
+    </select><br>
+
+    
+    <br><button onclick="main()">Generar informe de cobro</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>

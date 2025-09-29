@@ -1,0 +1,39 @@
+<!--
+   Página web con un campo de texto, cuatro checkbox, un botón y 
+   un área de texto, para  para registrar síntomas y recibir 
+   recomendaciones simples y seguras como reposar, hidratarse o consultar
+   a un profesional de la salud, según la gravedad o combinación de 
+   síntomas reportados.
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Julio 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe de cobro de trayecto en taxi</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Diagnostico.js"></script>
+  </head>
+
+  <body>
+    <h2>INFORME DE COBRO DE TRAYECTO EN TAXI</h2>
+    <label>- Temperatura corporal: </label>
+    <input type="text" id="temperatura" /><br>
+    <label>- Síntomas por 2 o más días (s/n): </label>
+    <input type="checkbox" id="sintomasVariosDias" /><br>
+    <label>- Tiene malestar intenso (s/n): </label>
+    <input type="checkbox" id="malestarIntenso" /><br>
+    <label>- Tiene dolor de cabeza (s/n): </label>
+    <input type="checkbox" id="dolorCabeza" /><br>
+    <label>- Tiene congestion nasal (s/n): </label>
+    <input type="checkbox" id="congestionNasal" /><br>
+    
+    <br><button onclick="main()">Generar informe de cobro</button><br>
+    <br><textarea id="salida" rows="10" cols="80" readonly></textarea>
+  </body>
+
+</html>

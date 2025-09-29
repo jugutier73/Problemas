@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[pdfencoding=auto]{hyperref}
+
+\begin{document}
+
+\vspace{0.5cm}
+\textbf{c. Demo interactivo}\\
+\indent{\scriptsize(requiere de un lector de PDF con soporte JavaScript -ej: lea el PDF en el navegador-)}\\
+
+{\footnotesize
+  \begin{Form}
+    \begin{enumerate}
+        \item En el último mes, ¿con qué frecuencia te has sentido afectado por algo que ocurrió inesperadamente?\\
+              \ChoiceMenu[radio,name=respuesta01,radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia te has sentido incapaz de controlar las  cosas importantes en tu vida?\\
+              \ChoiceMenu[radio, name=respuesta02, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia te has sentido nervioso o estresado?\\
+              \ChoiceMenu[radio, name=respuesta03, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has manejado con éxito los pequeños problemas irritantes de la vida?\\
+              \ChoiceMenu[radio, name=respuesta04, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has sentido que has afrontado efectivamente los cambios importantes que han estado ocurriendo en tu vida?\\
+              \ChoiceMenu[radio, name=respuesta05, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has estado seguro sobre tu capacidad para manejar tus problemas personales?\\
+              \ChoiceMenu[radio, name=respuesta06, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has sentido que las cosas van bien?\\
+              \ChoiceMenu[radio, name=respuesta07, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has sentido que no podías afrontar todas las cosas que tenías que hacer?\\
+              \ChoiceMenu[radio, name=respuesta08, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has podido controlar las dificultades de tu vida?\\
+              \ChoiceMenu[radio, name=respuesta09, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has sentido que tenías todo bajo control?\\
+              \ChoiceMenu[radio, name=respuesta10, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué  frecuencia has estado enfadado porque las cosas que te han ocurrido estaban fuera de tu control?\\
+              \ChoiceMenu[radio, name=respuesta11, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has pensado sobre las cosas que te faltan por hacer?\\
+              \ChoiceMenu[radio, name=respuesta12, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has podido controlar la forma de pasar el tiempo?\\
+              \ChoiceMenu[radio, name=respuesta13, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+
+        \item En el último mes, ¿con qué frecuencia has sentido que las dificultades se acumulan tanto que no puedes superarlas?\\
+              \ChoiceMenu[radio, name=respuesta14, radiosymbol=\ding{108}]{}
+              {Nunca=1,Casi nunca=2,De vez en cuando=3,A menudo=4,Muy a menudo=5}\\
+    \end{enumerate}
+    \vspace{0.2cm}
+
+    \TextField[name=salida,width=10cm,height=2.8cm,multiline=true,readonly=true]{}
+    \end{Form}
+    
+    \vspace{0.2cm} 
+     
+    \begin{Form}
+    \PushButton[%
+    onclick={
+    OPCIONES = 4;
+    NIVEL_BAJO     = 19;
+    NIVEL_MODERADO = 25;
+    function main() {
+        let respuesta01 = ingresarRespuesta('respuesta01');
+        let respuesta02 = ingresarRespuesta('respuesta02');
+        let respuesta03 = ingresarRespuesta('respuesta03');
+        let respuesta04 = ingresarRespuestaInvertida('respuesta04');
+        let respuesta05 = ingresarRespuestaInvertida('respuesta05');
+        let respuesta06 = ingresarRespuestaInvertida('respuesta06');
+        let respuesta07 = ingresarRespuestaInvertida('respuesta07');
+        let respuesta08 = ingresarRespuesta('respuesta08');
+        let respuesta09 = ingresarRespuestaInvertida('respuesta09');
+        let respuesta10 = ingresarRespuestaInvertida('respuesta10');
+        let respuesta11 = ingresarRespuesta('respuesta11');
+        let respuesta12 = ingresarRespuesta('respuesta12');
+        let respuesta13 = ingresarRespuestaInvertida('respuesta13');
+        let respuesta14 = ingresarRespuesta('respuesta14');
+        let puntajeTotal = calcularPuntajeTotal(respuesta01, respuesta02,
+            respuesta03, respuesta04, respuesta05, respuesta06,
+            respuesta07, respuesta08,	respuesta09, respuesta10,
+            respuesta11, respuesta12,	respuesta13, respuesta14);
+        let nivelEstres = obtenerNivelEstres(puntajeTotal);
+        let reporteEstres = generarReporteEstres(nivelEstres, puntajeTotal);
+        mostrarMensaje(reporteEstres);
+    }
+    function mostrarMensaje(mensaje) {
+		this.getField("salida").value = mensaje;
+	}
+    function mostrarError(mensaje) {
+        app.alert(mensaje);
+    }
+    function ingresarRespuesta(componente) {
+        let opcion = this.getField(componente).value;
+        if (opcion == 'Off'){
+            mostrarError(`Falt\\xf3 una respuesta en la ${componente}, se asume la primera opci\\xf3n`);
+            opcion = 1;
+        }
+        return opcion;
+    }
+    function ingresarRespuestaInvertida(componente) {
+        return Math.abs(ingresarRespuesta(componente) - OPCIONES);
+    }
+    function calcularPuntajeTotal(respuesta01, respuesta02, respuesta03, respuesta04,
+        respuesta05, respuesta06, respuesta07, respuesta08, respuesta09, 
+        respuesta10, respuesta11, respuesta12, respuesta13, respuesta14) {
+        return respuesta01 + respuesta02 + respuesta03 + respuesta04 +
+            respuesta05 + respuesta06 + respuesta07 + respuesta08 +
+            respuesta09 + respuesta10 + respuesta11 + respuesta12 +
+            respuesta13 + respuesta14;
+    }
+    function obtenerNivelEstres(puntajeTotal) {
+        let nivelEstres;
+        if (puntajeTotal < NIVEL_BAJO) {
+            nivelEstres = 'BAJO';
+        } else {
+            if (puntajeTotal < NIVEL_MODERADO) {
+                nivelEstres = 'MODERADO';
+            } else {
+                nivelEstres = 'ALTO';
+            }
+        }
+        return nivelEstres;
+    }
+    function generarReporteEstres(nivelEstres, puntajeTotal) {
+        return `\\nSu nivel de estr\\xe9s es ${nivelEstres}, `+
+            `con un puntaje de ${puntajeTotal}.`;
+    }
+    main();
+    }]{Generar reporte de estrés}
+  \end{Form}
+}
+
+\end{document}

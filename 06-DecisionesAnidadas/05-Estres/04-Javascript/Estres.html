@@ -1,0 +1,294 @@
+<!--
+   Página web con 14 radio buttons, un botón y 
+   un área de texto, para evaluar el nivel de estrés 
+   de los estudiantes
+
+   Autor: Julián Esteban Gutiérrez Posada
+   Fecha: Agosto 2025
+   Licencia: GNU GPL v3
+-->
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe del nivel de estrés</title>
+
+    <script type="text/javascript" src="modulo/util.js"></script>
+    <script type="text/javascript" src="Estres.js"></script>
+  </head>
+
+  <body>
+    <h2>INFORME DEL NIVEL DE ESTRÉS</h2>
+
+    <ol>
+      <li>En el último mes, ¿con qué frecuencia te has sentido afectado por algo que ocurrió inesperadamente?<br>
+        Nunca            
+        <input type="radio" id="respuesta01_1" name="respuesta01" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta01_2" name="respuesta01">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta01_3" name="respuesta01">
+        
+        A menudo         
+        <input type="radio" id="respuesta01_4" name="respuesta01">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta01_5" name="respuesta01">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia te has sentido incapaz de controlar las  cosas importantes en tu vida?<br>
+        Nunca            
+        <input type="radio" id="respuesta02_1" name="respuesta02" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta02_2" name="respuesta02">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta02_3" name="respuesta02">
+        
+        A menudo         
+        <input type="radio" id="respuesta02_4" name="respuesta02">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta02_5" name="respuesta02">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia te has sentido nervioso o estresado?<br>
+        Nunca            
+        <input type="radio" id="respuesta03_1" name="respuesta03" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta03_2" name="respuesta03">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta03_3" name="respuesta03">
+        
+        A menudo         
+        <input type="radio" id="respuesta03_4" name="respuesta03">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta03_5" name="respuesta03">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia has manejado con éxito los pequeños problemas irritantes de la vida?<br>
+        Nunca            
+        <input type="radio" id="respuesta04_1" name="respuesta04" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta04_2" name="respuesta04">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta04_3" name="respuesta04">
+        
+        A menudo        
+        <input type="radio" id="respuesta04_4" name="respuesta04">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta04_5" name="respuesta04">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia has sentido que has afrontado efectivamente los cambios importantes que han estado ocurriendo en tu vida?<br>
+        Nunca            
+        <input type="radio" id="respuesta05_1" name="respuesta05" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta05_2" name="respuesta05">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta05_3" name="respuesta05">
+        
+        A menudo         
+        <input type="radio" id="respuesta05_4" name="respuesta05">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta05_5" name="respuesta05">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia has estado seguro sobre tu capacidad para manejar tus problemas personales?<br>
+        Nunca            
+        <input type="radio" id="respuesta06_1" name="respuesta06" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta06_2" name="respuesta06">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta06_3" name="respuesta06">
+        
+        A menudo         
+        <input type="radio" id="respuesta06_4" name="respuesta06">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta06_5" name="respuesta06">
+      </li><br>
+
+
+
+
+
+      <li>En el último mes, ¿con qué frecuencia has sentido que las cosas van bien?<br>
+        Nunca            
+        <input type="radio" id="respuesta07_1" name="respuesta07" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta07_2" name="respuesta07">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta07_3" name="respuesta07">
+        
+        A menudo         
+        <input type="radio" id="respuesta07_4" name="respuesta07">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta07_5" name="respuesta07">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia has sentido que no podías afrontar todas las cosas que tenías que hacer?<br>
+        Nunca            
+        <input type="radio" id="respuesta08_1" name="respuesta08" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta08_2" name="respuesta08">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta08_3" name="respuesta08">
+        
+        A menudo         
+        <input type="radio" id="respuesta08_4" name="respuesta08">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta08_5" name="respuesta08">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia has podido controlar las dificultades de tu vida?<br>
+        Nunca            
+        <input type="radio" id="respuesta09_1" name="respuesta09" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta09_2" name="respuesta09">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta09_3" name="respuesta09">
+        
+        A menudo         
+        <input type="radio" id="respuesta09_4" name="respuesta09">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta09_5" name="respuesta09">
+      </li><br>
+
+
+
+
+
+
+
+      <li>En el último mes, ¿con qué frecuencia has sentido que tenías todo bajo control?<br>
+        Nunca            
+        <input type="radio" id="respuesta10_1" name="respuesta10" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta10_2" name="respuesta10">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta10_3" name="respuesta10">
+        
+        A menudo         
+        <input type="radio" id="respuesta10_4" name="respuesta10">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta10_5" name="respuesta10">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué  frecuencia has estado enfadado porque las cosas que te han ocurrido estaban fuera de tu control?<br>
+        Nunca            
+        <input type="radio" id="respuesta11_1" name="respuesta11" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta11_2" name="respuesta11">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta11_3" name="respuesta11">
+        
+        A menudo         
+        <input type="radio" id="respuesta11_4" name="respuesta11">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta11_5" name="respuesta11">
+      </li><br>
+
+
+      <li>En el último mes, ¿con qué frecuencia has pensado sobre las cosas que te faltan por hacer?<br>
+        Nunca            
+        <input type="radio" id="respuesta12_1" name="respuesta12" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta12_2" name="respuesta12">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta12_3" name="respuesta12">
+        
+        A menudo         
+        <input type="radio" id="respuesta12_4" name="respuesta12">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta12_5" name="respuesta12">
+      </li><br>
+
+
+
+
+      
+
+
+      <li>En el último mes, ¿con qué frecuencia has podido controlar la forma de pasar el tiempo?<br>
+        Nunca            
+        <input type="radio" id="respuesta13_1" name="respuesta13" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta13_2" name="respuesta13">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta13_3" name="respuesta13">
+        
+        A menudo         
+        <input type="radio" id="respuesta13_4" name="respuesta13">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta13_5" name="respuesta13">
+      </li><br>
+
+      
+      <li>En el último mes, ¿con qué frecuencia has sentido que las dificultades se acumulan tanto que no puedes superarlas?<br>
+        Nunca            
+        <input type="radio" id="respuesta14_1" name="respuesta14" checked>
+        
+        Casi nunca       
+        <input type="radio" id="respuesta14_2" name="respuesta14">
+        
+        De vez en cuando 
+        <input type="radio" id="respuesta14_3" name="respuesta14">
+        
+        A menudo         
+        <input type="radio" id="respuesta14_4" name="respuesta14">
+        
+        Muy a menudo     
+        <input type="radio" id="respuesta14_5" name="respuesta14">
+      </li>
+    </ol>
+    
+    <br><button onclick="main()">Generar reporte de estrés</button><br>
+    <br><textarea id="salida" rows="10" cols="60" readonly></textarea>
+  </body>
+
+</html>
