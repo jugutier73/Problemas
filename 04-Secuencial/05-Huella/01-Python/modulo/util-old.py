@@ -16,7 +16,8 @@ def mostrar_mensaje(mensaje):
 
 
 def ingresar_texto(pregunta):
-    """Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el texto ingresado por el usuario como respuesta a una
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -28,7 +29,8 @@ def ingresar_texto(pregunta):
 
 
 def ingresar_entero(pregunta):
-    """Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el entero ingresado por el usuario como respuesta a una 
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -40,7 +42,8 @@ def ingresar_entero(pregunta):
 
 
 def ingresar_real(pregunta):
-    """Devuelve el real ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el real ingresado por el usuario como respuesta a una 
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.

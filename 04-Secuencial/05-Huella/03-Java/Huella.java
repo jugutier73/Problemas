@@ -14,14 +14,14 @@ final double HUELLA_MOTO  = 53.0;
 final double HUELLA_BUS   = 49.0;
 
 void main() {
-  var kmCarro = Util.ingresarReal("Total de kilómetros en carro: ");
-  var kmMoto = Util.ingresarReal("Total de kilómetros en moto : ");
-  var kmBuses = Util.ingresarReal("Total de kilómetros en buses: ");
+ var kmCarro=Util.ingresarReal("Total de kilómetros recorridos en carro:");
+ var kmMoto =Util.ingresarReal("Total de kilómetros recorridos en moto :");
+ var kmBuses=Util.ingresarReal("Total de kilómetros recorridos en bus  :");
 
-  var huella = calcularHuellaCarbono(kmCarro, kmMoto, kmBuses);
-  var informeHuella = generarHuella(kmCarro, kmMoto, kmBuses, huella);
+ var huella = calcularHuellaCarbono(kmCarro, kmMoto, kmBuses);
+ var informeHuella = generarHuella(kmCarro, kmMoto, kmBuses, huella);
 
-  Util.mostrarMensaje(informeHuella);
+ Util.mostrarMensaje(informeHuella);
 }
 
 double calcularHuellaCarbono(double kmCarro, double kmMoto, double kmBuses){

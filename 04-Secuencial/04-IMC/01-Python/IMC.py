@@ -13,7 +13,7 @@ def main():
     altura = ingresar_real("Altura (m): ")
 
     imc = calcular_IMC(peso, altura);            
-    informeIMC = generar_informe_IMC(peso, altura, imc);
+    informeIMC = generar_informe_IMC(peso, altura, imc)
     
     mostrar_mensaje(informeIMC)
 

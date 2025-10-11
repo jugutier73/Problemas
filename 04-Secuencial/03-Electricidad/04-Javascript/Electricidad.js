@@ -12,10 +12,12 @@ function main() {
   let consumoActual = ingresarEntero('consumoActual');
   let consumoAnterior = ingresarEntero('consumoAnterior');
 
-  let relacionConsumo = calcularRelacionConsumo(
-    consumoActual, consumoAnterior);
-  let reporteRelacion = generarReporteRelacion(
-    consumoActual, consumoAnterior, relacionConsumo);
+  let relacionConsumo = calcularRelacionConsumo(consumoActual, 
+                                                consumoAnterior);
+
+  let reporteRelacion = generarReporteRelacion(consumoActual, 
+                                               consumoAnterior,
+                                               relacionConsumo);
     
   mostrarMensaje(reporteRelacion);
 }

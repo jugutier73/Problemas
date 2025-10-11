@@ -24,7 +24,7 @@ func main() {
 	relacionConsumo := calcularRelacionConsumo(consumoActual,
 		consumoAnterior)
 
-	reporteRelacion := generarReporeRelacion(consumoActual, consumoAnterior,
+	reporteRelacion := generarReporteRelacion(consumoActual, consumoAnterior,
 		relacionConsumo)
 
 	modulo.MostrarMensaje(reporteRelacion)
@@ -34,7 +34,7 @@ func calcularRelacionConsumo(consumoActual int, consumoAnterior int) float64 {
 	return float64(consumoActual) / float64(consumoAnterior) * 100.0
 }
 
-func generarReporeRelacion(consumoActual int, consumoAnterior int, relacionConsumo float64) string {
+func generarReporteRelacion(consumoActual int, consumoAnterior int, relacionConsumo float64) string {
 	return fmt.Sprintf(
 		"\nEl consumo actual de %d kilovatios representa"+
 			"\nun %.1f%% con relación al consumo del mes"+

@@ -17,7 +17,7 @@ main = do
   consumoAnterior <- ingresarEntero "Consumo mes anterior (kilovatios): "
 
   let relacionConsumo = calcularRelacionConsumo consumoActual consumoAnterior
-  let reporteRelacion = generarReporeRelacion consumoActual consumoAnterior relacionConsumo
+  let reporteRelacion = generarReporteRelacion consumoActual consumoAnterior relacionConsumo
   
   mostrarMensaje reporteRelacion
 
@@ -27,8 +27,8 @@ calcularRelacionConsumo consumoActual consumoAnterior =
   fromIntegral consumoActual / fromIntegral consumoAnterior * 100.0
 
 
-generarReporeRelacion :: Int -> Int -> Double -> String
-generarReporeRelacion consumoActual consumoAnterior relacionConsumo =
+generarReporteRelacion :: Int -> Int -> Double -> String
+generarReporteRelacion consumoActual consumoAnterior relacionConsumo =
   printf
     ("\nEl consumo actual de %d kilovatios representa" ++
     "\nun %.1f%% con relación al consumo del mes" ++

@@ -14,7 +14,6 @@ function mostrarMensaje(mensaje) {
   document.getElementById("salida").value = mensaje;
 }
 
-
 /**
  * Muestra un mensaje (cadena) en el error estandar.
  * 
@@ -24,9 +23,8 @@ function mostrarError(mensaje) {
   alert(mensaje);
 }
 
-
 /**
- * Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el texto ingresado por el usuario como respuesta a una pregunta
  * 
  * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
  * @return {string} Texto ingresado por el usuario
@@ -36,10 +34,13 @@ function ingresarTexto(componente) {
 }
 
 /**
- * Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el entero ingresado por el usuario como respuesta a una 
+ * pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
- * @return {int} Valor ingresado por el usuario o cero si es un valor inválido.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
+ * @return {int} Valor ingresado por el usuario o cero si es un valor 
+ *               inválido.
  */
 function ingresarEntero(componente) {
   let entero = Number(ingresarTexto(componente));
@@ -52,12 +53,13 @@ function ingresarEntero(componente) {
   return entero;
 }
 
-
 /**
  * Devuelve el real ingresado por el usuario como respuesta a una pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
- * @return {float} Valor ingresado por el usuario o cero si es un valor inválido.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
+ * @return {float} Valor ingresado por el usuario o cero si es un valor 
+ *                 inválido.
  */
 function ingresarReal(componente) {
   let real = Number(ingresarTexto(componente));

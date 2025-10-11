@@ -14,9 +14,9 @@ HUELLA_MOTO  = 53.0
 HUELLA_BUS   = 49.0
 
 def main():
-    km_carro = ingresar_real("Total de kilómetros en carro: ")
-    km_moto  = ingresar_real("Total de kilómetros en moto : ")
-    km_buses = ingresar_real("Total de kilómetros en buses: ")
+    km_carro = ingresar_real("Total de kilómetros recorridos en carro: ")
+    km_moto  = ingresar_real("Total de kilómetros recorridos en moto : ")
+    km_buses = ingresar_real("Total de kilómetros recorridos en bus  : ")
 
     huella = calcular_huella_carbono(km_carro, km_moto, km_buses)
     informe_huella = generar_huella(km_carro, km_moto, km_buses, huella)
@@ -31,7 +31,7 @@ def calcular_huella_carbono(km_carro, km_moto, km_buses):
 def generar_huella(km_carro, km_moto, km_buses, huella):
     return (
         f"\nCon {km_carro}, {km_moto}, {km_buses} km de recorrido"
-        f"\nen carro, moto y bus representante,"
+        f"\nen carro, moto y bus respectivamente,"
         f"\nsu huella de carbono por el uso de"
         f"\ntransporte es de {huella:.1f} kg de CO2.\n"
     )

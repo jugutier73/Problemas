@@ -16,9 +16,12 @@ void main() {
 	var consumoAnterior = Util.ingresarEntero(
         "Consumo mes anterior (kilovatios): ");
 
-	var relacionConsumo = calcularRelacionConsumo(consumoActual, consumoAnterior);
-	var reporteRelacion = generarReporeRelacion(consumoActual, 
-        consumoAnterior, relacionConsumo);
+	var relacionConsumo = calcularRelacionConsumo(consumoActual,
+                                                consumoAnterior);
+
+	var reporteRelacion = generarReporteRelacion(consumoActual, 
+                                               consumoAnterior,
+                                               relacionConsumo);
         
 	Util.mostrarMensaje(reporteRelacion);
 }
@@ -27,7 +30,7 @@ double calcularRelacionConsumo(int consumoActual, int consumoAnterior) {
 	return (double)consumoActual / (double)consumoAnterior * 100.0;
 }
 
-String generarReporeRelacion(int consumoActual, int consumoAnterior, 
+String generarReporteRelacion(int consumoActual, int consumoAnterior, 
 double relacionConsumo) {
 	return String.format(
     "\nEl consumo actual de %d kilovatios representa"+

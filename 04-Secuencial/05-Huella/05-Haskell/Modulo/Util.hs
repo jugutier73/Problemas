@@ -19,7 +19,6 @@ mostrarMensaje :: String -> IO ()
 mostrarMensaje mensaje = do
   putStr mensaje
 
-
 {-|
   Muestra un mensaje (cadena) en el error estandar.
   
@@ -28,7 +27,6 @@ mostrarMensaje mensaje = do
 mostrarError :: String -> IO ()
 mostrarError mensaje = do
   hPutStr stderr mensaje
-
 
 {-|
   Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
@@ -41,9 +39,8 @@ ingresarTexto pregunta = do
   mostrarMensaje pregunta
   getLine
 
-
 {-|
-  Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+  Devuelve el entero ingresado por el usuario como respuesta a una pregunta
 
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @return Valor ingresado por el usuario.
@@ -57,7 +54,6 @@ ingresarEntero pregunta = do
               mostrarError "El valor ingresado es inválido, se asume 0\n\n"
               pure 0
   return entero
-
 
 {-|
   Devuelve el real ingresado por el usuario como respuesta a una pregunta.

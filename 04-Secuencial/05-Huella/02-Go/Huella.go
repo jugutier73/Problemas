@@ -21,9 +21,9 @@ const (
 )
 
 func main() {
-	kmCarro := modulo.IngresarReal("Total de kilómetros en carro: ")
-	kmMoto := modulo.IngresarReal("Total de kilómetros en moto : ")
-	kmBuses := modulo.IngresarReal("Total de kilómetros en buses: ")
+	kmCarro :=modulo.IngresarReal("Total de kilómetros recorridos en carro:")
+	kmMoto := modulo.IngresarReal("Total de kilómetros recorridos en moto :")
+	kmBuses := modulo.IngresarReal("Total de kilómetros recorridos en bus :")
 
 	huella := calcularHuellaCarbono(kmCarro, kmMoto, kmBuses)
 	informeHuella := generarHuella(kmCarro, kmMoto, kmBuses, huella)
@@ -38,7 +38,7 @@ func calcularHuellaCarbono(kmCarro float64, kmMoto float64, kmBuses float64) flo
 func generarHuella(kmCarro float64, kmMoto float64, kmBuses float64, huella float64) string {
 	return fmt.Sprintf(
 		"\nCon %.1f, %.1f, %.1f km de recorrido"+
-			"\nen carro, moto y bus representante,"+
+			"\nen carro, moto y bus respectivamente,"+
 			"\nsu huella de carbono por el uso de"+
 			"\ntransporte es de %.1f kg de CO2.\n",
 		kmCarro, kmMoto, kmBuses, huella)

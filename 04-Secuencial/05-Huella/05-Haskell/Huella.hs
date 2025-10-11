@@ -17,9 +17,9 @@ huellaBus = 49.0
 
 main :: IO()
 main = do
-  kmCarro <- ingresarReal "Total de kilómetros en carro: "
-  kmMoto <- ingresarReal "Total de kilómetros en moto : "
-  kmBuses <- ingresarReal "Total de kilómetros en buses: "
+  kmCarro <- ingresarReal "Total de kilómetros recorridos en carro: "
+  kmMoto <- ingresarReal "Total de kilómetros recorridos en moto : "
+  kmBuses <- ingresarReal "Total de kilómetros recorridos en buses: "
 
   let huella = calcularHuellaCarbono kmCarro kmMoto kmBuses
   let informeHuella = generarHuella kmCarro kmMoto kmBuses huella
@@ -34,7 +34,7 @@ generarHuella :: Double -> Double -> Double -> Double -> String
 generarHuella kmCarro kmMoto kmBuses huella =
   printf
     ("\nCon %.1f, %.1f, %.1f km de recorrido" ++
-    "\nen carro, moto y bus representante,"++
+    "\nen carro, moto y bus respectivamente,"++
     "\nsu huella de carbono por el uso de"++
     "\ntransporte es de %.1f kg de CO2.\n"
     )

@@ -33,7 +33,7 @@ func IngresarTexto(pregunta string) string {
 	return strings.TrimSpace(texto)
 }
 
-// IngresarEntero muestra una pregunta y devuelve el entero ingresado por el usuario o cero si es un valor inválido..
+// IngresarEntero muestra una pregunta y devuelve el entero ingresado por el usuario o cero si es un valor inválido.
 func IngresarEntero(pregunta string) int {
 	entero, err := strconv.Atoi(IngresarTexto(pregunta))
 	if err != nil {
@@ -43,7 +43,7 @@ func IngresarEntero(pregunta string) int {
 	return entero
 }
 
-// IngresarReal muestra una pregunta y devuelve el real ingresado por el usuario o cero si es un valor inválido..
+// IngresarReal muestra una pregunta y devuelve el real ingresado por el usuario o cero si es un valor inválido.
 func IngresarReal(pregunta string) float64 {
 	real, err := strconv.ParseFloat(IngresarTexto(pregunta), 64)
 	if err != nil {

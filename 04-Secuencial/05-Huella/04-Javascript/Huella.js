@@ -30,7 +30,7 @@ function calcularHuellaCarbono(kmCarro, kmMoto, kmBuses) {
 
 function generarHuella(kmCarro, kmMoto, kmBuses, huella) {
 	return `\nCon ${kmCarro.toFixed(1)}, ${kmMoto.toFixed(1)}, ${kmBuses.toFixed(1)} km de recorrido`+
-         `\nen carro, moto y bus representante,`+
+         `\nen carro, moto y bus respectivamente,`+
 			   `\nsu huella de carbono por el uso de`+
 			   `\ntransporte es de ${huella.toFixed(1)} kg de CO2.\n`;
 }
