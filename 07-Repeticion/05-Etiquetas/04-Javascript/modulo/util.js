@@ -26,9 +26,10 @@ function mostrarError(mensaje) {
 
 
 /**
- * Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el texto ingresado por el usuario como respuesta a una pregunta
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
  * @return {string} Texto ingresado por el usuario
  */
 function ingresarTexto(componente) {
@@ -37,10 +38,13 @@ function ingresarTexto(componente) {
 
 
 /**
- * Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el entero ingresado por el usuario como respuesta a una 
+ * pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
- * @return {int} Valor ingresado por el usuario o cero si es un valor inválido.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
+ * @return {int} Valor ingresado por el usuario o cero si es un valor 
+ *               inválido.
  */
 function ingresarEntero(componente) {
   let entero = Number(ingresarTexto(componente));
@@ -56,9 +60,11 @@ function ingresarEntero(componente) {
 
 
 /**
- * Selecciona el contenido de un componente html que tiene una entrada inválida.
+ * Selecciona el contenido de un componente html que tiene una entrada
+ * inválida.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta inválida.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta inválida.
  */
 function seleccionarError(componente) {
   document.getElementById(componente).select();
@@ -68,8 +74,10 @@ function seleccionarError(componente) {
 /**
  * Devuelve el real ingresado por el usuario como respuesta a una pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
- * @return {float} Valor ingresado por el usuario o cero si es un valor inválido.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
+ * @return {float} Valor ingresado por el usuario o cero si es un valor
+ *                 inválido.
  */
 function ingresarReal(componente) {
   let real = Number(ingresarTexto(componente));
@@ -85,9 +93,11 @@ function ingresarReal(componente) {
 
 
 /**
- * Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el booleano ingresado por el usuario como respuesta a una 
+ * pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
  * @return {boolean} Valor ingresado por el usuario.
  */
 function ingresarLogico(componente) {
@@ -96,9 +106,11 @@ function ingresarLogico(componente) {
 
 
 /**
- * Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+ * Devuelve el entero ingresado por el usuario como respuesta a una 
+ * pregunta con múltiples opciones del 1 a un máximo especificado.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
  * @param {int} maximaOpcion Entero que indica la cantidad de opciones.
  * @return {int} Valor ingresado por el usuario.
  */

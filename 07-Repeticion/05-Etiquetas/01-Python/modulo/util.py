@@ -26,9 +26,9 @@ def mostrar_error(mensaje):
     print(mensaje, end="", file=sys.stderr)
 
 
-
 def ingresar_texto(pregunta):
-    """Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el texto ingresado por el usuario como respuesta a una
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -39,9 +39,9 @@ def ingresar_texto(pregunta):
     return input(pregunta)
 
 
-
 def ingresar_entero(pregunta):
-    """Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el entero ingresado por el usuario como respuesta a una
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -58,7 +58,8 @@ def ingresar_entero(pregunta):
 
 
 def ingresar_real(pregunta):
-    """Devuelve el real ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el real ingresado por el usuario como respuesta a una 
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -75,7 +76,8 @@ def ingresar_real(pregunta):
 
 
 def ingresar_logico(pregunta):
-    """Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el booleano ingresado por el usuario como respuesta a una
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -93,7 +95,8 @@ def ingresar_logico(pregunta):
 
 
 def ingresar_opcion(pregunta, maxima_opcion):
-    """Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+    """Devuelve el entero ingresado por el usuario como respuesta a una
+       pregunta con múltiples opciones del 1 a un máximo especificado.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.

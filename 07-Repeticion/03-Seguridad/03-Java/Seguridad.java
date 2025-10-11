@@ -10,7 +10,7 @@
 import modulo.Util;
 
 void main() {
-	var contrasenia = Util.ingresarTexto("Ingrese la contraseña a analizar: ");
+	var contrasenia = Util.ingresarTexto("Ingrese la contraseña analizar: ");
 
 	var cantidadMayusculas = contarMayusculas(contrasenia);
 	var cantidadMinusculas = contarMinusculas(contrasenia);

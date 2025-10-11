@@ -44,7 +44,7 @@ ingresarTexto pregunta = do
 
 
 {-|
-  Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+  Devuelve el entero ingresado por el usuario como respuesta a una pregunta
 
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @return Valor ingresado por el usuario.
@@ -78,7 +78,8 @@ ingresarReal pregunta = do
 
 
 {-|
-  Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+  Devuelve el booleano ingresado por el usuario como respuesta a una 
+  pregunta.
 
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @return Valor ingresado por el usuario.
@@ -96,7 +97,8 @@ ingresarLogico pregunta = do
 
 
 {-|
-  Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+  Devuelve el entero ingresado por el usuario como respuesta a una pregunta
+  con múltiples opciones del 1 a un máximo especificado.
   
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @param maximaOpcion Entero que indica la cantidad de opciones.

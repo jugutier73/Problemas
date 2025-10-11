@@ -27,9 +27,9 @@ int contarPalabrasInician(String texto, char letraInicio) {
 	var cantidadPalabrasInteres = 0;
 
 	for (var palabra : palabras) {
-            if (palabra.startsWith(Character.toString(letraInicio))) {
-                cantidadPalabrasInteres++;
-            }
+		  if (palabra.startsWith(Character.toString(letraInicio))) {
+			  cantidadPalabrasInteres++;
+		  }
     }
 
 	return cantidadPalabrasInteres;
