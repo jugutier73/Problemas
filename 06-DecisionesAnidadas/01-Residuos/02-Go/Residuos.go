@@ -29,10 +29,12 @@ func main() {
 		"\t(2) orgánico,\n"+
 		"\t(3) otro\n\n"+
 		"Cuál es el tipo de residuo: ", MAX_OPCIONES)
+
 	hayRecoleccionSelectiva := modulo.IngresarLogico(
 		"Hay ruta de recolección selectiva (s/n): ")
 
 	colorBolsa := recomendarColorBolsa(tipoResiduo, hayRecoleccionSelectiva)
+	
 	reporteBolsaRecoleccion := generarReporteBolsa(colorBolsa)
 
 	modulo.MostrarMensaje(reporteBolsaRecoleccion)

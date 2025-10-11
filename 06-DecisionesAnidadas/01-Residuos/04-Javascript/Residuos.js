@@ -18,6 +18,7 @@ function main() {
 
 	let colorBolsa = recomendarColorBolsa(
 		tipoResiduo, hayRecoleccionSelectiva);
+		
 	let reporteBolsaRecoleccion = generarReporteBolsa(colorBolsa);
 
 	mostrarMensaje(reporteBolsaRecoleccion);

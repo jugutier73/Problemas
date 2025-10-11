@@ -21,10 +21,13 @@ main = do
     "\t(2) cerca,\n" ++
     "\t(3) lejos: \n\n" ++
     "Cuál es el tipo de distancia: ") 3
+
   estaLloviendo <- ingresarLogico "Está lloviendo (s/n): "
+
   hayTransporte <- ingresarLogico "Hay transporte público (s/n): "
   
   let medioTransporte = recomendarMedioTransporte tipoDistancia estaLloviendo hayTransporte
+  
   let reporteTransporte = generarReporteTransporte medioTransporte
   
   mostrarMensaje reporteTransporte

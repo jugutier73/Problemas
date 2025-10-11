@@ -28,6 +28,7 @@ def main():
     
     color_bolsa = recomendar_color_bolsa(
         tipo_residuo, hay_recoleccion_selectiva)
+    
     reporte_bolsa_recoleccion = generar_reporte_bolsa(color_bolsa)
 
     mostrar_mensaje(reporte_bolsa_recoleccion)

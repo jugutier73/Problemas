@@ -32,7 +32,9 @@ main = do
     respuesta14 <- ingresarRespuesta "¿con qué frecuencia has sentido que las dificultades se acumulan tanto que no puedes superarlas?"
 
     let puntajeTotal = calcularPuntajeTotal respuesta01 respuesta02 respuesta03 respuesta04 respuesta05 respuesta06 respuesta07 respuesta08 respuesta09 respuesta10 respuesta11 respuesta12 respuesta13 respuesta14
+
     let nivelEstres = obtenerNivelEstres puntajeTotal
+    
     let reporteEstres = generarReporteEstres nivelEstres puntajeTotal
 
     mostrarMensaje reporteEstres

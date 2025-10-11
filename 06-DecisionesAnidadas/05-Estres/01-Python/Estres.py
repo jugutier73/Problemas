@@ -47,6 +47,7 @@ def main():
         respuesta03, respuesta04, respuesta05, respuesta06, 
         respuesta07, respuesta08, respuesta09, respuesta10,
         respuesta11, respuesta12, respuesta13, respuesta14)
+    
     nivel_estres = obtener_nivel_estres(puntaje_total)
 
     reporte_estres = generar_reporte_estres(nivel_estres, puntaje_total)

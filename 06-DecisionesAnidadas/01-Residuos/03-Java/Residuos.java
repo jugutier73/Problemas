@@ -22,11 +22,13 @@ void main() {
 		"\t(2) orgánico,\n"+
 		"\t(3) otro\n\n"+
 		"Cuál es el tipo de residuo: ", MAX_OPCIONES);
+
 	var hayRecoleccionSelectiva = Util.ingresarLogico(
 		"Hay ruta de recolección selectiva (s/n): ");
 
 	var colorBolsa = recomendarColorBolsa(
 		tipoResiduo, hayRecoleccionSelectiva);
+		
 	var reporteBolsaRecoleccion = generarReporteBolsa(colorBolsa);
 
 	Util.mostrarMensaje(reporteBolsaRecoleccion);

@@ -25,9 +25,11 @@ main = do
     "\t(2) orgánico,\n"++
     "\t(3) otro\n\n"++
     "Cuál es el tipo de residuo: ") max_opciones
+
   hayRecoleccionSelectiva <- ingresarLogico "Hay ruta de recolección selectiva (s/n): "
   
   let colorBolsa = recomendarColorBolsa tipoResiduo hayRecoleccionSelectiva
+  
   let reporteBolsaRecoleccion = generarReporteBolsa colorBolsa
   
   mostrarMensaje reporteBolsaRecoleccion

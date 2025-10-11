@@ -17,6 +17,7 @@ function main() {
 
 	let medioTransporte = recomendarMedioTransporte(
 		tipoDistancia, estaLloviendo, hayTransporte);
+		
 	let reporteTransporte = generarReporteTransporte(medioTransporte);
 
 	mostrarMensaje(reporteTransporte);

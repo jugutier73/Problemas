@@ -25,11 +25,14 @@ func main() {
 		"\t(2) cerca,\n"+
 		"\t(3) lejos: \n\n"+
 		"Cuál es el tipo de distancia: ", 3)
+
 	estaLloviendo := modulo.IngresarLogico("Está lloviendo (s/n): ")
+
 	hayTransporte := modulo.IngresarLogico("Hay transporte público (s/n): ")
 
 	medioTransporte := recomendarMedioTransporte(
 		tipoDistancia, estaLloviendo, hayTransporte)
+		
 	reporteTransporte := generarReporteTransporte(medioTransporte)
 
 	modulo.MostrarMensaje(reporteTransporte)

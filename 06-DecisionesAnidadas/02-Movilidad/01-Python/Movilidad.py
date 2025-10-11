@@ -19,11 +19,14 @@ def main():
                                      "\t(2) cerca,\n"+
                                      "\t(3) lejos: \n\n"+
                                      "Cuál es el tipo de distancia: ", 3)
+    
     esta_lloviendo = ingresar_logico("Está lloviendo (s/n): ")
+
     hay_transporte = ingresar_logico("Hay transporte público (s/n): ")  
     
     medio_transporte = recomendar_medio_transporte(
         tipo_distancia, esta_lloviendo, hay_transporte)
+    
     reporte_transporte = generar_reporte_transporte(medio_transporte)
 
     mostrar_mensaje(reporte_transporte)

@@ -18,11 +18,14 @@ void main() {
 		"\t(2) cerca,\n"+
 		"\t(3) lejos: \n\n"+
 		"Cuál es el tipo de distancia: ", 3);
+
 	var estaLloviendo = Util.ingresarLogico("Está lloviendo (s/n): ");
-	var hayTransporte = Util.ingresarLogico("Hay transporte público (s/n): ");
+
+	var hayTransporte = Util.ingresarLogico("Hay transporte público (s/n):");
 
 	var medioTransporte = recomendarMedioTransporte(
 		tipoDistancia, estaLloviendo, hayTransporte);
+
 	var reporteTransporte = generarReporteTransporte(medioTransporte);
 
 	Util.mostrarMensaje(reporteTransporte);

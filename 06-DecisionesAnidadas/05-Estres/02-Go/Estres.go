@@ -55,6 +55,7 @@ func main() {
 		respuesta03, respuesta04, respuesta05, respuesta06,
 		respuesta07, respuesta08, respuesta09, respuesta10,
 		respuesta11, respuesta12, respuesta13, respuesta14)
+		
 	nivelEstres := obtenerNivelEstres(puntajeTotal)
 
 	reporteEstres := generarReporteEstres(nivelEstres, puntajeTotal)
