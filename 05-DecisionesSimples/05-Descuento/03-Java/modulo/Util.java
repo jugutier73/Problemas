@@ -32,7 +32,8 @@ public class Util {
 
 
   /**
-   * Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el texto ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Texto ingresado por el usuario
@@ -46,7 +47,8 @@ public class Util {
 
 
   /**
-   * Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el entero ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Valor ingresado por el usuario o cero si es un valor inválido.
@@ -64,7 +66,8 @@ public class Util {
 
 
   /**
-   * Devuelve el real ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el real ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Valor ingresado por el usuario o cero si es un valor inválido.
@@ -82,10 +85,11 @@ public class Util {
 
 
   /**
-   * Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el booleano ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
-   * @return Valor ingresado por el usuario o falso si es un valor inválido.
+   * @return Valor ingresado por el usuario o falso si es un valor inválido
    */
   public static boolean ingresarLogico(String pregunta) {
     var opcion = ingresarTexto(pregunta).toLowerCase();

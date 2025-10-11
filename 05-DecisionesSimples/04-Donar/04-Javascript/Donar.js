@@ -26,9 +26,12 @@ function main() {
 function generarReporteEligibilidad(edadDonante, autorizacionEdad, pesoDonante, suficienteMadurez)  {
   let mensaje = "\nEl donante no cumple las condiciones para donar\n"; 
 
-  if ((edadDonante >= EDAD_MINIMA &&  edadDonante <= EDAD_MAXIMA ||
-      edadDonante >= EDAD_MINIMA_AUTORIZACION &&  edadDonante <= EDAD_MAXIMA_AUTORIZACION && 
-      autorizacionEdad) && pesoDonante > PESO_MINIMO && suficienteMadurez){
+  if ((edadDonante >= EDAD_MINIMA &&  
+       edadDonante <= EDAD_MAXIMA ||
+       edadDonante >= EDAD_MINIMA_AUTORIZACION &&  
+       edadDonante <= EDAD_MAXIMA_AUTORIZACION && 
+       autorizacionEdad) && 
+      pesoDonante > PESO_MINIMO && suficienteMadurez){
     mensaje = "\nEl donante es elegible para donar\n";
   }
 

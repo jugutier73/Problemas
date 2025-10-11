@@ -13,7 +13,7 @@ final int EDAD_ADULTO_MAYOR  = 60;
 
 void main() {
 	var edadPaciente = Util.ingresarEntero("Edad del paciente: ");
-	var enfermedadCronica = Util.ingresarLogico("Enfermedad crónica (s/n): ");
+	var enfermedadCronica = Util.ingresarLogico("Enfermedad crónica (s/n):");
 	var estadoInmunosupresion = Util.ingresarLogico("Estado de inmunosupresión (s/n): ");
 
 	var reporteAtencion = generarReporteAtencion(edadPaciente,
