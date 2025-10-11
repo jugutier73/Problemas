@@ -26,9 +26,9 @@ def mostrar_error(mensaje):
     print(mensaje, end="", file=sys.stderr)
 
 
-
 def ingresar_texto(pregunta):
-    """Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el texto ingresado por el usuario como respuesta 
+       a una pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -39,9 +39,9 @@ def ingresar_texto(pregunta):
     return input(pregunta)
 
 
-
 def ingresar_entero(pregunta):
-    """Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el entero ingresado por el usuario como respuesta a una
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -58,7 +58,8 @@ def ingresar_entero(pregunta):
 
 
 def ingresar_real(pregunta):
-    """Devuelve el real ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el real ingresado por el usuario como respuesta a una 
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -75,7 +76,8 @@ def ingresar_real(pregunta):
 
 
 def ingresar_logico(pregunta):
-    """Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+    """Devuelve el booleano ingresado por el usuario como respuesta a una
+       pregunta.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -93,7 +95,8 @@ def ingresar_logico(pregunta):
 
 
 def ingresar_opcion(pregunta, maxima_opcion):
-    """Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+    """Devuelve el entero ingresado por el usuario como respuesta a una
+       pregunta con múltiples opciones del 1 a un máximo especificado.
 
     Args:
         pregunta: Texto que se le presenta al usuario como pregunta.
@@ -112,7 +115,9 @@ def ingresar_opcion(pregunta, maxima_opcion):
 
 
 def ingresar_coleccion(ingresar_elemento):
-    """Devuelve una colección, con los elementos obtenidos de un función especificada, hasta que el usuario indique que ya no sea ingresar más datos.
+    """Devuelve una colección, con los elementos obtenidos de un función
+       especificada, hasta que el usuario indique que ya no sea ingresar 
+       más datos.
 
     Args:
         ingresar_elemento: Función que solicita un dato al usuario.
@@ -146,7 +151,8 @@ def ordenar_coleccion(coleccion, campo_seleccionado, descendente):
 
 
 def convertir_coleccion_cadena(titulo, coleccion, convertir_elemento_cadena):
-    """Convierte una coleccion de elementos a una cadena, según una función dada como argumento que convierte un elemento.
+    """Convierte una coleccion de elementos a una cadena, según una función
+       dada como argumento que convierte un elemento.
 
     Args:
         titulo: Título que se utiliza para los elementos de la colección.
@@ -165,11 +171,13 @@ def convertir_coleccion_cadena(titulo, coleccion, convertir_elemento_cadena):
 
 
 def contar_segun_criterio(coleccion, aplicar_criterio, valor_criterio):
-    """Cuenta la cantidad de elementos de una colección que cumplen un criterio dado como argumento.
+    """Cuenta la cantidad de elementos de una colección que cumplen un
+       criterio dado como argumento.
 
     Args:
         coleccion: Colección de elementos a procesar.
-        aplicar_criterio: Función que toma un elemento e indica si cumple un cierto criterio.
+        aplicar_criterio: Función que toma un elemento e indica si cumple 
+                          un cierto criterio.
         valor_criterio: Valor de refencia para el criterio.
 
     Returns:

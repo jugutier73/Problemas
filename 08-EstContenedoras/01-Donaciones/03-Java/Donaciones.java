@@ -117,7 +117,7 @@ String generarReporteDonaciones(List<Donante> donantesPorNombre,
             + listadoPorDonacion + "\n" 
             + listadoMayores + "\n" 
             + "El mayor donante: " + mayorDonante.nombre() + "\n" 
-            + "Total de donantes $" + sumaDonaciones + "\n";
+            + "Total de donaciones $" + sumaDonaciones + "\n";
 }
 
 <Tipo> String convertirColeccionCadena(String titulo, 

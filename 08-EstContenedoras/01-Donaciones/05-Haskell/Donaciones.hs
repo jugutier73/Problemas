@@ -61,9 +61,9 @@ ingresarDonante = do
   return (Donante nombre donacion)
 
 ordenarColeccion :: [a] -> (a -> a -> Ordering) -> Bool -> [a]
-ordenarColeccion xs cmp descendente
-  | descendente = sortBy (flip cmp) xs
-  | otherwise   = sortBy cmp xs
+ordenarColeccion coleccion comparador descendente
+  | descendente = sortBy (flip comparador) coleccion
+  | otherwise   = sortBy comparador coleccion
 
 compararNombre :: Donante -> Donante -> Ordering
 compararNombre = comparing nombre
@@ -72,7 +72,7 @@ compararDonacion :: Donante -> Donante -> Ordering
 compararDonacion = comparing donacion
 
 obtenerMayoresDonaciones :: [Donante] -> Int -> [Donante]
-obtenerMayoresDonaciones xs limite = filter (\d -> donacion d > limite) xs
+obtenerMayoresDonaciones donantes limite = filter (\d -> donacion d > limite) donantes
 
 obtenerMayorDonante :: [Donante] -> Donante
 obtenerMayorDonante = maximumBy (on compare donacion)
@@ -99,15 +99,15 @@ generarReporteDonaciones donantesPorNombre donantesPorDonacion mayoresDonantes  
 
   in printf ("%s\n%s\n%s\n"
               ++ "\nEl mayor donante: %s" 
-              ++ "\nTotal de donantes $%d\n")
+              ++ "\nTotal de donaciones $%d\n")
               listadoPorNombre listadoPorDonacion listadoMayores 
               (nombre mayorDonante) sumaDonaciones
 
 convertirColeccionCadena :: String -> [tipo] -> (tipo -> String) -> String
-convertirColeccionCadena titulo lista convertirElementoCadena =
+convertirColeccionCadena titulo coleccion convertirElementoCadena =
   printf ("\n%s\n%s") titulo 
     (concatMap 
-      (\elemento -> "\t" ++ convertirElementoCadena elemento) lista
+      (\elemento -> "\t" ++ convertirElementoCadena elemento) coleccion
     )
 
 obtenerDonante :: Donante -> String

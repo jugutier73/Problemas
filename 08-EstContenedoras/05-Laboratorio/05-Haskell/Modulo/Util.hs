@@ -46,7 +46,7 @@ ingresarTexto pregunta = do
 
 
 {-|
-  Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+  Devuelve el entero ingresado por el usuario como respuesta a una pregunta
 
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @return Valor ingresado por el usuario.
@@ -80,7 +80,8 @@ ingresarReal pregunta = do
 
 
 {-|
-  Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+  Devuelve el booleano ingresado por el usuario como respuesta a una 
+  pregunta.
 
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @return Valor ingresado por el usuario.
@@ -98,7 +99,8 @@ ingresarLogico pregunta = do
 
 
 {-|
-  Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+  Devuelve el entero ingresado por el usuario como respuesta a una pregunta
+  con múltiples opciones del 1 a un máximo especificado.
   
   @param pregunta Texto que se le presenta al usuario como pregunta.
   @param maximaOpcion Entero que indica la cantidad de opciones.
@@ -115,10 +117,13 @@ ingresarOpcion pregunta maximaOpcion = do
 
 
 {-|
-  Devuelve una colección, con los elementos obtenidos de un función especificada, hasta que el usuario indique que ya no sea ingresar más datos.
+  Devuelve una colección, con los elementos obtenidos de un función 
+  especificada, hasta que el usuario indique que ya no sea ingresar 
+  más datos.
   
   @param ingresarElemento Función que solicita un dato al usuario.
-  @return Coleccion con los valores ingresados por medio de la función indicada.
+  @return Coleccion con los valores ingresados por medio de la función
+          indicada.
 -}
 ingresarColeccion :: IO tipo -> IO [tipo]
 ingresarColeccion ingresarElemento = adicionarElemento []

@@ -58,8 +58,8 @@ def ingresar_donante():
 
     return  { "nombre": nombre, "donacion": donacion }
 
-def ordenar_coleccion(donantes, comparador, descendente):
-    return sorted(donantes, key=comparador, reverse=descendente)
+def ordenar_coleccion(coleccion, comparador, descendente):
+    return sorted(coleccion, key=comparador, reverse=descendente)
 
 def comparar_nombre(donacion):
     return donacion["nombre"]
@@ -77,14 +77,14 @@ def obtener_mayores_donantes(donantes, valor_limite):
     return mayores_donantes
 
 def obtener_mayor_donante(donantes):
-    elemento_mayor = None
+    mayor_donante = None
 
     for elemento in donantes:
-        if elemento_mayor is None or \
-           elemento_mayor["donacion"] < elemento["donacion"]:
-            elemento_mayor = elemento
+        if mayor_donante is None or \
+           mayor_donante["donacion"] < elemento["donacion"]:
+            mayor_donante = elemento
     
-    return elemento_mayor
+    return mayor_donante
 
 def obtener_suma_donantes(donantes):
     suma_donantes = 0
@@ -117,7 +117,7 @@ def generar_reporte_donantes(donantes_por_nombre,
             f"{listado_por_donacion}\n"
             f"{listado_mayores}\n"
             f"El mayor donante: {mayor_donante["nombre"]}\n"
-            f"Total de donantes ${suma_donantes}\n"
+            f"Total de donaciones ${suma_donantes}\n"
            )
 
 def convertir_coleccion_cadena(titulo, coleccion, convertir_elemento_cadena):
@@ -132,7 +132,3 @@ def convertir_donante_cadena(donante):
     return f"${donante['donacion']:10} \t {donante['nombre']}\n"
 
 main()
-
-
-# def obtener_mayores(donantes, valor_limite):
-#     return [e for e in donantes if e["donacion"] > valor_limite]

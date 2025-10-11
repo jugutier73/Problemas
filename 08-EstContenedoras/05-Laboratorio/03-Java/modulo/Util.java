@@ -38,7 +38,8 @@ public class Util {
 
 
   /**
-   * Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el texto ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Texto ingresado por el usuario
@@ -53,7 +54,8 @@ public class Util {
 
 
   /**
-   * Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el entero ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Valor ingresado por el usuario.
@@ -69,9 +71,9 @@ public class Util {
     return valor;
   }
 
-
   /**
-   * Devuelve el real ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el real ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Valor ingresado por el usuario.
@@ -89,7 +91,8 @@ public class Util {
 
 
   /**
-   * Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+   * Devuelve el booleano ingresado por el usuario como respuesta a una 
+   * pregunta.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @return Valor ingresado por el usuario.
@@ -110,7 +113,8 @@ public class Util {
 
 
   /**
-   * Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+   * Devuelve el entero ingresado por el usuario como respuesta a una 
+   * pregunta con múltiples opciones del 1 a un máximo especificado.
    * 
    * @param pregunta Texto que se le presenta al usuario como pregunta.
    * @param maximaOpcion Entero que indica la cantidad de opciones.
@@ -129,11 +133,14 @@ public class Util {
 
 
   /**
-   * Devuelve una colección, con los elementos obtenidos de un función especificada, hasta que el usuario indique que ya no sea ingresar más datos.
+   * Devuelve una colección, con los elementos obtenidos de un función
+   * especificada, hasta que el usuario indique que ya no sea ingresar más 
+   * datos.
    * 
    * @param <Tipo> Tipo de dato de un elemento.
    * @param ingresarElemento Función que solicita un dato al usuario.
-   * @return Coleccion con los valores ingresados por medio de la función indicada.
+   * @return Coleccion con los valores ingresados por medio de la función 
+   *         indicada.
    */
   public static <Tipo> List<Tipo> ingresarColeccion(Supplier<Tipo> ingresarElemento){
           var coleccion = new ArrayList<Tipo>();
@@ -155,8 +162,10 @@ public class Util {
    * @param <Tipo> Tipo de dato de un elemento.
    * @param coleccion Colección de elementos que se desean ordenar.
    * @param comparador Función utilizada como criterio de ordenación.
-   * @param descendente Valor booleano para indicar si se ordena descendentemente.
-   * @return Nueva colección con todos los datos ordenados por el criterio y sentido indicado.
+   * @param descendente Valor booleano para indicar si se ordena
+   *        descendentemente.
+   * @return Nueva colección con todos los datos ordenados por el criterio
+   *         y sentido indicado.
    */
   public static <Tipo> List<Tipo>  ordenarColeccion(List<Tipo> coleccion, 
                                       Comparator<Tipo> comparador, 
@@ -168,12 +177,14 @@ public class Util {
 
 
   /**
-   * Convierte una coleccion de elementos a una cadena, según una función dada como argumento que convierte un elemento.
+   * Convierte una coleccion de elementos a una cadena, según una función 
+   * dada como argumento que convierte un elemento.
    * 
    * @param <Tipo> Tipo de dato de un elemento.
-   * @param titulo Título que se utiliza para los elementos de la colección.
+   * @param titulo Título que se utiliza para los elementos de la colección
    * @param coleccion Colección de elementos a mostrar.
-   * @param convertirElementoCadena Función que convierte un elemento a una cadena.
+   * @param convertirElementoCadena Función que convierte un elemento a una
+   *        cadena.
    * @return Un texto con un título y todos los elementos de la colección.
    */
   public static <Tipo> String convertirColeccionCadena(String titulo, 
@@ -190,16 +201,18 @@ public class Util {
 
 
   /**
-   * Cuenta la cantidad de elementos de una colección que cumplen un criterio dado como argumento.
+   * Cuenta la cantidad de elementos de una colección que cumplen un 
+   * criterio dado como argumento.
    * 
    * @param <Tipo1> Tipo de dato de un elemento.
    * @param <Tipo2> Tipo de dato del valor de referencia.
    * @param coleccion Colección de elementos a procesar.
-   * @param aplicarCriterio Función que toma un elemento e indica si cumple un cierto criterio.
+   * @param aplicarCriterio Función que toma un elemento e indica si cumple 
+   *        un cierto criterio.
    * @param valorCriterio  Valor de refencia para el criterio.
    * @return Cantidad de elementos de la colección que cumplemen el 
-        el criterio indicado.
-  */
+   *         el criterio indicado.
+   */
   public static <Tipo1, Tipo2> int contarSegunCriterio(List<Tipo1> coleccion, BiPredicate<Tipo1, Tipo2> aplicarCriterio, Tipo2 valorCriterio){
     return (int) coleccion.stream()
       .filter(elemento -> aplicarCriterio.test(elemento, valorCriterio))

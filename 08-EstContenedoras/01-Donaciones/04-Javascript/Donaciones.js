@@ -63,12 +63,12 @@ function ordenarColeccion(coleccion, comparador, descendente) {
   );
 }
 
-function compararNombre(d1, d2) {
-  return d1.nombre.localeCompare(d2.nombre);
+function compararNombre(donante1, donante2) {
+  return donante1.nombre.localeCompare(donante2.nombre);
 }
 
-function compararDonacion(d1, d2) {
-  return d1.donacion - d2.donacion;
+function compararDonacion(donante1, donante2) {
+  return donante1.donacion - donante2.donacion;
 }
 
 function obtenerMayoresDonaciones(coleccion, limite) {
@@ -110,7 +110,7 @@ function generarReporteDonaciones(donantesPorNombre,
 
   return `${listadoPorNombre}\n${listadoPorDonacion}\n${listadoMayores}\n`+
     `El mayor donante: ${mayorDonante.nombre}\n` +
-    `Total de donantes $${sumaDonaciones}\n`;
+    `Total de donaciones $${sumaDonaciones}\n`;
 }
 
 function convertirColeccionCadena(titulo, lista, convertirElementoCadena) {

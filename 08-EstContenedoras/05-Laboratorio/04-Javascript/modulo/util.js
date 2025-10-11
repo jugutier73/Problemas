@@ -26,9 +26,10 @@ function mostrarError(mensaje) {
 
 
 /**
- * Devuelve el texto ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el texto ingresado por el usuario como respuesta a una pregunta
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
  * @return {string} Texto ingresado por el usuario
  */
 function ingresarTexto(componente) {
@@ -37,10 +38,13 @@ function ingresarTexto(componente) {
 
 
 /**
- * Devuelve el entero ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el entero ingresado por el usuario como respuesta a una 
+ * pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
- * @return {int} Valor ingresado por el usuario o cero si es un valor inválido.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
+ * @return {int} Valor ingresado por el usuario o cero si es un valor 
+ *               inválido.
  */
 function ingresarEntero(componente) {
   let entero = Number(ingresarTexto(componente));
@@ -56,9 +60,11 @@ function ingresarEntero(componente) {
 
 
 /**
- * Selecciona el contenido de un componente html que tiene una entrada inválida.
+ * Selecciona el contenido de un componente html que tiene una entrada
+ * inválida.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta inválida.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta inválida.
  */
 function seleccionarError(componente) {
   document.getElementById(componente).select();
@@ -68,8 +74,10 @@ function seleccionarError(componente) {
 /**
  * Devuelve el real ingresado por el usuario como respuesta a una pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
- * @return {float} Valor ingresado por el usuario o cero si es un valor inválido.
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
+ * @return {float} Valor ingresado por el usuario o cero si es un valor
+ *                 inválido.
  */
 function ingresarReal(componente) {
   let real = Number(ingresarTexto(componente));
@@ -85,9 +93,11 @@ function ingresarReal(componente) {
 
 
 /**
- * Devuelve el booleano ingresado por el usuario como respuesta a una pregunta.
+ * Devuelve el booleano ingresado por el usuario como respuesta a una 
+ * pregunta.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
  * @return {boolean} Valor ingresado por el usuario.
  */
 function ingresarLogico(componente) {
@@ -96,9 +106,11 @@ function ingresarLogico(componente) {
 
 
 /**
- * Devuelve el entero ingresado por el usuario como respuesta a una pregunta con múltiples opciones del 1 a un máximo especificado.
+ * Devuelve el entero ingresado por el usuario como respuesta a una 
+ * pregunta con múltiples opciones del 1 a un máximo especificado.
  * 
- * @param {string} componente Nombre del componente donde el usuario ingresa la respuesta
+ * @param {string} componente Nombre del componente donde el usuario 
+ *                            ingresa la respuesta
  * @param {int} maximaOpcion Entero que indica la cantidad de opciones.
  * @return {int} Valor ingresado por el usuario.
  */
@@ -108,10 +120,13 @@ function ingresarOpcion(componente) {
 
 
 /**
- * Devuelve una colección, con los elementos obtenidos de un función especificada, hasta que el usuario indique que ya no sea ingresar más datos.
+ * Devuelve una colección, con los elementos obtenidos de un función 
+ * especificada, hasta que el usuario indique que ya no sea ingresar
+ * más datos.
  * 
  * @param ingresarElemento Función que solicita un dato al usuario.
- * @return Coleccion con los valores ingresados por medio de la función indicada.
+ * @return Coleccion con los valores ingresados por medio de la función 
+ *         indicada.
  */
 function ingresarColeccion(ingresarElemento) {
   const coleccion = [];
@@ -130,10 +145,14 @@ function ingresarColeccion(ingresarElemento) {
 /**
  * Ordena una coleccion de elementos, según el campo y orden indicado.
  * 
- * @param {Collection} coleccion Colección de elementos que se desean ordenar.
- * @param {Function} comparador Función utilizada como criterio de ordenación.
- * @param {boolean} descendente Valor booleano para indicar si se ordena descendentemente.
- * @return {Collection} Nueva colección con todos los datos ordenados por el criterio y sentido indicado.
+ * @param {Collection} coleccion Colección de elementos que se desean 
+ *                               ordenar.
+ * @param {Function} comparador Función utilizada como criterio de 
+ *                              ordenación.
+ * @param {boolean} descendente Valor booleano para indicar si se ordena
+ *                              descendentemente.
+ * @return {Collection} Nueva colección con todos los datos ordenados por
+ *                      el criterio y sentido indicado.
  */
 function ordenarColeccion(coleccion, comparador, descendente) {
   return [...coleccion].sort(
@@ -143,14 +162,16 @@ function ordenarColeccion(coleccion, comparador, descendente) {
   );
 }
 
-
 /**
- * Convierte una coleccion de elementos a una cadena, según una función dada como argumento que convierte un elemento.
- * 
- * @param {string} titulo Título que se utiliza para los elementos de la colección.
+ * Convierte una coleccion de elementos a una cadena, según una función 
+ * dada como argumento que convierte un elemento.
+ * @param {string} titulo Título que se utiliza para los elementos de la
+ *                        colección.
  * @param {Collection} coleccion Colección de elementos a mostrar.
- * @param {Function} convertirElementoCadena Función que convierte un elemento a una cadena.
- * @return {string} Un texto con un título y todos los elementos de la colección.
+ * @param {Function}   convertirElementoCadena Función que convierte un 
+ *                                             elemento a una cadena.
+ * @return {string} Un texto con un título y todos los elementos de la
+ *                  colección.
  */
 function convertirColeccionCadena(titulo, lista, convertirElementoCadena) {
   let mensaje = `\n${titulo}\n`;
@@ -162,10 +183,9 @@ function convertirColeccionCadena(titulo, lista, convertirElementoCadena) {
   return mensaje;
 }
 
-
  /**
-   * Cuenta la cantidad de elementos de una colección que cumplen un criterio dado como argumento.
-   * 
+   * Cuenta la cantidad de elementos de una colección que cumplen un 
+   * criterio dado como argumento.
    * @param {Collection} coleccion Colección de elementos a procesar.
    * @param {Function} aplicarCriterio Función que toma un elemento e indica si cumple un cierto criterio.
    * @param {boolean} valorCriterio  Valor de refencia para el criterio.

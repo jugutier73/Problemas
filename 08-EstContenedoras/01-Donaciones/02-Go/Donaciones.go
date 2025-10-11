@@ -113,7 +113,7 @@ func obtenerMayorDonante(donantes []Donante) Donante {
 	for _, donacion := range donantes {
 		if primerDonante || donacion.Donacion > mayorDonante.Donacion {
 			mayorDonante = donacion
-			primerDonante = true
+			primerDonante = false
 		}
 	}
 
@@ -152,7 +152,7 @@ func generarReporteDonaciones(donantesOrdenNombre,
 
 	return fmt.Sprintf("%s\n%s\n%s\n"+
 		"El mayor donante: %s\n"+
-		"Total de donantes $%d\n",
+		"Total de donaciones $%d\n",
 		listadoPorNombre,
 		listadoPorDonacion,
 		listadoMayores,
