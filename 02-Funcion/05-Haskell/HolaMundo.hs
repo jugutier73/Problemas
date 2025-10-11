@@ -9,7 +9,6 @@ main :: IO()
 main = do
   mostrarMensaje "Hola Mundo\n"
 
-
 mostrarMensaje :: String -> IO ()
 mostrarMensaje mensaje = do
   putStr mensaje
