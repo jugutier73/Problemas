@@ -20,14 +20,14 @@ function main() {
   let citasPorNivel = ordenarColeccion(citas, 
     compararCampoNivel, false);
 
-  let cantidadRiesgo      = contarSegunCriterio(citas, 
-    tenerNivelRiesgo, NIVEL_RIESGO);
+  let cantidadRiesgo      = contarSegunCriterio(
+    citas, tenerNivelRiesgo, NIVEL_RIESGO);
 
-  let cantidadUrgencia    = contarSegunCriterio(citas, 
-    tenerNivelRiesgo, NIVEL_URGENCIA);
+  let cantidadUrgencia    = contarSegunCriterio(
+    citas, tenerNivelRiesgo, NIVEL_URGENCIA);
 
-  let cantidadPrioritario = contarSegunCriterio(citas, 
-    tenerNivelRiesgo, NIVEL_PRIORITARIO);
+  let cantidadPrioritario = contarSegunCriterio(
+    citas, tenerNivelRiesgo, NIVEL_PRIORITARIO);
 
   let reporteCitas = generarReporteCitas(citasPorNivel,
                                          cantidadRiesgo,

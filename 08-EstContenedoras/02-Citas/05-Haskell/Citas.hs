@@ -31,7 +31,7 @@ main :: IO()
 main = do
   citas <- ingresarColeccion ingresarCita
   
-  let citasPorNivel   = ordenarColeccion citas compararNivel False
+  let citasPorNivel       = ordenarColeccion citas compararNivel False
 
   let cantidadRiesgo      = contarSegunCriterio citas tenerNivelRiesgo nivel_riesgo 
 

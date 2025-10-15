@@ -13,9 +13,10 @@
 from modulo.util import ingresar_texto, ingresar_entero, ingresar_logico, mostrar_mensaje, ingresar_coleccion, convertir_coleccion_cadena, contar_segun_criterio
 
 def main():
-    reservas_comedor = ingresar_coleccion(ingresar_reverva)
+    reservas_comedor = ingresar_coleccion(ingresar_reserva)
 
-    cantidad_con_necesidades = contar_segun_criterio(reservas_comedor, tener_necesidad_especial, True)
+    cantidad_con_necesidades = contar_segun_criterio(
+        reservas_comedor, tener_necesidad_especial, True)
 
     promedio_edades = calcular_promedio_edades(reservas_comedor)
 
@@ -27,10 +28,10 @@ def main():
 
     mostrar_mensaje(reporte_reservas_comedor)
 
-def ingresar_reverva():
+def ingresar_reserva():
     mostrar_mensaje("\nIngrese los datos de la reserva:\n")
-    nombre = ingresar_texto ("\tIngrese el nombre de la persona  : ")
-    edad = ingresar_entero ("\tIngrese la edad de la persona    : ")
+    nombre = ingresar_texto  ("\tIngrese el nombre de la persona  : ")
+    edad   = ingresar_entero ("\tIngrese la edad de la persona    : ")
     necesidad_especial = ingresar_logico ("\tTiene necesidades especiales (s/n): ")
 
     return  { "nombre": nombre, 
@@ -74,16 +75,3 @@ def convertir_reserva_cadena(reserva):
     return mensaje + "\n"
 
 main()
-
-
-# def contar_necesidades_especiales(reservas_comedor):
-#     return sum(reserva["necesidad_especial"] for reserva in reservas_comedor)
-
-
-# def calcular_promedio_edades(reservas_comedor):
-#     total_reservas = len(reservas_comedor)
-
-#     promedio_edades = (sum(reserva["edad"] for reserva in reservas_comedor) / total_reservas) \
-#                         if total_reservas > 0 else 0.0
-
-#     return promedio_edades

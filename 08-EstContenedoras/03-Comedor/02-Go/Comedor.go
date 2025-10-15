@@ -24,9 +24,10 @@ type Reserva struct {
 }
 
 func main() {
-	reservasComedor := modulo.IngresarColeccion(ingresarReverva)
+	reservasComedor := modulo.IngresarColeccion(ingresarReserva)
 
-	cantidadConNecesidades := modulo.ContarSegunCriterio(reservasComedor, tenerNecesidadEspecial, true)
+	cantidadConNecesidades := modulo.ContarSegunCriterio(
+		reservasComedor, tenerNecesidadEspecial, true)
 
 	promedioEdades := calcularPromedioEdades(reservasComedor)
 
@@ -38,10 +39,10 @@ func main() {
 	modulo.MostrarMensaje(reporteReservas)
 }
 
-func ingresarReverva() Reserva {
+func ingresarReserva() Reserva {
 	modulo.MostrarMensaje("\nIngrese los datos de la reserva:\n")
-	nombre := modulo.IngresarTexto("\tIngrese el nombre de la persona   : ")
-	edad := modulo.IngresarEntero("\tIngrese la edad de la persona     : ")
+	nombre := modulo.IngresarTexto ("\tIngrese el nombre de la persona   : ")
+	edad   := modulo.IngresarEntero("\tIngrese la edad de la persona     : ")
 	necesidadEspecial := modulo.IngresarLogico("\tTiene necesidades especiales (s/n): ")
 
 	return Reserva{Nombre: nombre, Edad: edad, NecesidadEspecial: necesidadEspecial}

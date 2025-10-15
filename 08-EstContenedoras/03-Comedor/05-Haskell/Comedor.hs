@@ -24,7 +24,7 @@ data Reserva = Reserva { nombre :: String, edad :: Int, necesidadEspecial :: Boo
 
 main :: IO()
 main = do
-  reservasComedor <- ingresarColeccion ingresarReverva
+  reservasComedor <- ingresarColeccion ingresarReserva
   
   let cantidadConNecesidades = contarSegunCriterio reservasComedor tenerNecesidadEspecial True
 
@@ -37,8 +37,8 @@ main = do
 
   mostrarMensaje reporteReservas
 
-ingresarReverva :: IO Reserva
-ingresarReverva = do
+ingresarReserva :: IO Reserva
+ingresarReserva = do
   mostrarMensaje "\nIngrese los datos de la reserva:\n"
   nombre <- ingresarTexto  "\tIngrese el nombre de la persona   : "
   edad <- ingresarEntero "\tIngrese la edad de la persona     : "

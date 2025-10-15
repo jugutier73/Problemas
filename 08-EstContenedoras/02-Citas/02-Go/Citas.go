@@ -31,17 +31,17 @@ type Cita struct {
 func main() {
 	citas := modulo.IngresarColeccion(ingresarCita)
 
-	citasPorNivel := modulo.OrdenarColeccion(citas,
-		compararCampoNivel, false)
+	citasPorNivel := modulo.OrdenarColeccion(
+		citas, compararCampoNivel, false)
 
-	cantidadRiesgo := contarSegunCriterio(citas,
-		tenerNivelRiesgo, NIVEL_RIESGO)
+	cantidadRiesgo := contarSegunCriterio(
+		citas, tenerNivelRiesgo, NIVEL_RIESGO)
 
-	cantidadUrgencia := contarSegunCriterio(citas,
-		tenerNivelRiesgo, NIVEL_URGENCIA)
+	cantidadUrgencia := contarSegunCriterio(
+		citas, tenerNivelRiesgo, NIVEL_URGENCIA)
 
-	cantidadPrioritario := contarSegunCriterio(citas,
-		tenerNivelRiesgo, NIVEL_PRIORITARIO)
+	cantidadPrioritario := contarSegunCriterio(
+		citas, tenerNivelRiesgo, NIVEL_PRIORITARIO)
 
 	reporteCitas := generarReporteCitas(
 		citasPorNivel,

@@ -21,9 +21,12 @@ def main():
 
     citas_por_nivel = ordenar_coleccion(citas, seleccionar_campo_nivel, False)
 
-    cantidad_riesgo      = contar_segun_criterio(citas, tener_nivel_riesgo, NIVEL_RIESGO)
-    cantidad_urgencia    = contar_segun_criterio(citas, tener_nivel_riesgo, NIVEL_URGENCIA)
-    cantidad_prioritario = contar_segun_criterio(citas, tener_nivel_riesgo, NIVEL_PRIORITARIO)
+    cantidad_riesgo      = contar_segun_criterio(
+        citas, tener_nivel_riesgo, NIVEL_RIESGO)
+    cantidad_urgencia    = contar_segun_criterio(
+        citas, tener_nivel_riesgo, NIVEL_URGENCIA)
+    cantidad_prioritario = contar_segun_criterio(
+        citas, tener_nivel_riesgo, NIVEL_PRIORITARIO)
 
     reporte_citas = generar_reporte_citas(
         citas_por_nivel, 

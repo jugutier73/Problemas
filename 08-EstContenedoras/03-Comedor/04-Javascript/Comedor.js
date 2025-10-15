@@ -12,7 +12,7 @@
 
 function main() {
 
-  let reservasComedor = ingresarColeccion(ingresarReverva);
+  let reservasComedor = ingresarColeccion(ingresarReserva);
 
   let cantidadConNecesidades = contarSegunCriterio(reservasComedor, tenerNecesidadEspecial, true);
 
@@ -26,7 +26,7 @@ function main() {
   mostrarMensaje(reporteReservas);
 }
 
-function ingresarReverva() {
+function ingresarReserva() {
   alert("Ingrese los datos de la reserva:");
 
   let nombre = prompt("Ingrese el nombre de la persona  :");

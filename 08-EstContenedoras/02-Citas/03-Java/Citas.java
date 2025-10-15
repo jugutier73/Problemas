@@ -23,14 +23,14 @@ void main() {
 	var citasPorNivel = Util.ordenarColeccion(citas, 
 	    seleccionarCampoNivel(),   false);
 
-	var cantidadRiesgo      = contarSegunCriterio(citas, 
-		(c, nivel) -> tenerNivelRiesgo(c, nivel), NIVEL_RIESGO);
+	var cantidadRiesgo      = contarSegunCriterio(
+		citas, (c, nivel) -> tenerNivelRiesgo(c, nivel), NIVEL_RIESGO);
 
-	var cantidadUrgencia    = contarSegunCriterio(citas, 
-		(c, nivel) -> tenerNivelRiesgo(c, nivel), NIVEL_URGENCIA);
+	var cantidadUrgencia    = contarSegunCriterio(
+		citas, (c, nivel) -> tenerNivelRiesgo(c, nivel), NIVEL_URGENCIA);
 
-	var cantidadPrioritario = contarSegunCriterio(citas, 
-		(c, nivel) -> tenerNivelRiesgo(c, nivel), NIVEL_PRIORITARIO);
+	var cantidadPrioritario = contarSegunCriterio(
+		citas, (c, nivel) -> tenerNivelRiesgo(c, nivel), NIVEL_PRIORITARIO);
 
 	var reporteCitas = generarReporteCitas(citasPorNivel,
 										   cantidadRiesgo,

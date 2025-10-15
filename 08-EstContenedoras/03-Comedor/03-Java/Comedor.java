@@ -15,10 +15,10 @@ import modulo.Util;
 record Reserva(String nombre, int edad, boolean necesidadEspecial) {}
 
 void main() {
-	var reservasComedor = Util.ingresarColeccion(() -> ingresarReverva());
+	var reservasComedor = Util.ingresarColeccion(() -> ingresarReserva());
 	
-	var cantidadConNecesidades = Util.contarSegunCriterio(reservasComedor,
-	  (reserva, necesidadEspecial) -> 
+	var cantidadConNecesidades = Util.contarSegunCriterio(
+		reservasComedor, (reserva, necesidadEspecial) -> 
 	    tenerNecesidadesEspeciales(reserva, necesidadEspecial), true );
 
 	var promedioEdades = calcularPromedioEdades(reservasComedor);
@@ -29,7 +29,7 @@ void main() {
 	Util.mostrarMensaje(reporteReservas);
 }
 
-Reserva ingresarReverva(){
+Reserva ingresarReserva(){
 	Util.mostrarMensaje("\nIngrese los datos de la reserva:\n");
 	var nombre = Util.ingresarTexto("\tIngrese el nombre de la persona   : ");
 	var edad  = Util.ingresarEntero("\tIngrese la edad de la persona     : ");
@@ -40,12 +40,6 @@ Reserva ingresarReverva(){
 
 boolean tenerNecesidadesEspeciales(Reserva reservas, boolean necesidadEspecial){
 	return reservas.necesidadEspecial() == necesidadEspecial;
-}
-
-int contarNecesidadesEspeciales(List<Reserva> reservasComedor){
-	return (int) reservasComedor.stream()
-		.filter(c -> c.necesidadEspecial())
-		.count();
 }
 
 double calcularPromedioEdades(List<Reserva> reservasComedor){
