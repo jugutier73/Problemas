@@ -14,6 +14,13 @@ Julián Esteban Gutiérrez Posada, PhD.
 jugutier@uniquindio.edu.co
 
 
+
 **Descargar material**
 
+
 https://github.com/jugutier73/Problemas/blob/main/Libro-Resoluci%C3%B3nProblemas.pdf.zip
+
+- Descargue el archivo .zip
+- Descomprima el PDF
+- Abra el PDF en un navegador (ej. Brave)
+  para que pueda usar la parte interactiva
