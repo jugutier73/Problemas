@@ -12,3 +12,8 @@ En resumen, se espera que el material sirva como guía en la iniciación al mund
 
 Julián Esteban Gutiérrez Posada, PhD.
 jugutier@uniquindio.edu.co
+
+
+*Descargar material*
+
+https://github.com/jugutier73/Problemas/blob/main/Libro-Resoluci%C3%B3nProblemas.pdf.zip
