@@ -12,7 +12,7 @@ def main():
     peso = ingresar_entero("Peso  (kg): ")
     altura = ingresar_real("Altura (m): ")
 
-    imc = calcular_IMC(peso, altura);            
+    imc = calcular_IMC(peso, altura)            
     informeIMC = generar_informe_IMC(peso, altura, imc)
     
     mostrar_mensaje(informeIMC)
@@ -21,7 +21,7 @@ def ingresar_real(pregunta):
     return float(ingresar_texto(pregunta))
 
 def calcular_IMC(peso, altura):
-    return peso / (altura**2.0);
+    return peso / (altura**2.0)
 
 def generar_informe_IMC(peso, altura, imc):
     return (
